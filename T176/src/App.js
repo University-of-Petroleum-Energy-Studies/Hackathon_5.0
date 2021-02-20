@@ -13,6 +13,8 @@ import BuyorSell from './Components/BuyorSell/BuyorSell';
 import Buy from './Components/Buy/Buy';
 import Header from './Components/Header/Header';
 import Checkout from './Components/Checkout/Checkout';
+import Payment from './Components/Payment/Payment';
+import Sell from './Components/Sell/Sell';
 
 function App() {
 
@@ -46,6 +48,14 @@ function App() {
           <Route exact path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+
+          <Route exact path="/payment">
+            <Payment />
+          </Route>
+
+          <Route exact path="/sell">
+            <Sell />
           </Route>
 
         </Switch>
