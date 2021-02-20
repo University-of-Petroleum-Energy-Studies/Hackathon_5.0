@@ -27,7 +27,7 @@ void setup() {
   
   delay(2000);//Wait before accessing Sensor
   
- // printStartingStatement();
+  printStartingStatement();
   
 
 }
