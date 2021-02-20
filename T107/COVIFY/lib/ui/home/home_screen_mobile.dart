@@ -27,6 +27,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = DeviceUtils.getScaledWidth(context, 1);
@@ -220,7 +221,6 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
 
                 Row(
                   children: const <Widget>[
-                    // Myth Busters Card
                     Expanded(
                       flex: 1,
                       child: HomeCardWidget(
@@ -232,6 +232,47 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                       ),
                     ),
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: Strings.mythBusterTitle,
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/myth-busters.png',
+                        route: Routes.mythBusters,
+                      ),
+                    ),
+
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: Strings.notesTitle,
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/notes.png',
+                        route: Routes.notes,
+                      ),
+                    ),
+
+
+                  ],
+                ),
+
+                SizedBoxHeightWidget(screenHeight / 125),
+
+                Row(
+                  children: const <Widget>[
+                    // Myth Busters Card
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Live Heat Map',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/map.png',
+                        route: Routes.map,
+                      ),
+                    ),
 
                     Expanded(
                       flex: 1,
@@ -245,13 +286,19 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                     ),
 
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'News',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/news.png',
+                        route: Routes.news,
+                      ),
+                    )
 
                   ],
                 ),
-
-                SizedBoxHeightWidget(screenHeight / 125),
-
-
 
                 SizedBoxHeightWidget(screenHeight / 125),
 

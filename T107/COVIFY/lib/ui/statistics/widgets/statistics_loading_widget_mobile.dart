@@ -10,7 +10,11 @@ import 'package:covid19/utils/device/device_utils.dart';
 import 'package:covid19/widgets/sized_box_height_widget.dart';
 import 'package:covid19/widgets/sized_box_width_widget.dart';
 
-
+/// Data being displayed when the current state of [HomeChangeNotifier]
+/// is loading
+/// **Requires**
+/// 1. [today] - to display the current date of the user in EEEE, d MMMM y format
+/// Supports Mobile Screen Sizes
 class StatisticsMobileLoadingWidget extends StatelessWidget {
   final DateTime today;
 

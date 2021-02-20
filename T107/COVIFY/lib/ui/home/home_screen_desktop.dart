@@ -1,11 +1,13 @@
+import 'package:covid19/ui/news/news_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/data/network/constants/endpoints.dart';
 import 'package:covid19/constants/colors.dart';
 import 'package:covid19/ui/statistics/statistics_screen.dart';
 import 'package:covid19/ui/prevention/prevention_screen.dart';
 import 'package:covid19/ui/symptoms/symptoms_screen.dart';
-
-
+import 'package:covid19/ui/mythBusters/myth_busters_screen.dart';
+import 'package:covid19/ui/faq/faq_screen.dart';
+import 'package:covid19/ui/map/map_screen.dart';
 import 'package:covid19/ui/information/information_screen.dart';
 
 
@@ -94,6 +96,19 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
               Expanded(
                 child: SymptomsScreen(),
               )
+            else if (_selectedIndex == 3)
+              Expanded(
+                child: MythBustersScreen(),
+              )
+            else if (_selectedIndex == 4)
+              Expanded(
+                child: FAQScreen(),
+              )
+
+             else if (_selectedIndex == 5)
+                        Expanded(
+                          child: MapScreen(),
+                        )
 
           ],
         ),

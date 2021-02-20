@@ -45,5 +45,10 @@ class AppColors {
 
   static const Color factColor = Color(0xFF6FCF97);
 
+  static const Color eggA = Color(0xFF0D324D);
+
+  static const Color eggB = Color(0xFFB3CDD1);
+
+
   static const Color preventionBackgroundColor = Color(0xFF337CE3);
 }

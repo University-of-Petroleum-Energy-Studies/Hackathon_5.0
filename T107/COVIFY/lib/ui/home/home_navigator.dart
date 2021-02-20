@@ -4,9 +4,10 @@ import 'package:covid19/ui/home/home_screen.dart';
 import 'package:covid19/ui/statistics/statistics_screen.dart';
 import 'package:covid19/ui/prevention/prevention_screen.dart';
 import 'package:covid19/ui/symptoms/symptoms_screen.dart';
+import 'package:covid19/ui/mythBusters/myth_busters_screen.dart';
+import 'package:covid19/ui/faq/faq_screen.dart';
 import 'package:covid19/ui/information/information_screen.dart';
 
-/// States for [HomeRoutes]
 enum HomeRoutes {
   home,
   latestNumbers,
@@ -18,8 +19,7 @@ enum HomeRoutes {
   information,
 }
 
-/// [HomeRoutesDefinitions] to map the appropriate states of [HomeRoutes]
-/// to paths
+
 extension HomeRouteDefinitions on HomeRoutes {
   String get name {
     switch (this) {
@@ -42,7 +42,6 @@ extension HomeRouteDefinitions on HomeRoutes {
     }
   }
 
-  /// [HomeRoutes] to decode the appropriate paths to [HomeRoutes]
   static HomeRoutes fromString(String str) {
     switch (str) {
       case '/':
@@ -67,8 +66,6 @@ extension HomeRouteDefinitions on HomeRoutes {
   }
 }
 
-/// Mappping the [HomeRoutes] to the particular [MaterialPageRoute] returning the
-///  appropriate Screen
 class HomeRouter {
   static List<String> routesStack = [];
 
@@ -88,6 +85,12 @@ class HomeRouter {
       case HomeRoutes.symptoms:
         return MaterialPageRoute(
             builder: (_) => SymptomsScreen(), settings: settings);
+      case HomeRoutes.mythBusters:
+        return MaterialPageRoute(
+            builder: (_) => MythBustersScreen(), settings: settings);
+      case HomeRoutes.faq:
+        return MaterialPageRoute(
+            builder: (_) => FAQScreen(), settings: settings);
       case HomeRoutes.information:
         return MaterialPageRoute(
             builder: (_) => InformationScreen(), settings: settings);
