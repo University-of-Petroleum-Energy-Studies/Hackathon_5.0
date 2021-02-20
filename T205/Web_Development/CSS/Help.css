@@ -1,0 +1,15 @@
+header{   
+   padding: 100px;
+   background-image: url("https://wallpapercave.com/wp/wp2916542.jpg") ;
+   background-size:cover ;
+   background-repeat: no-repeat, repeat;
+   background-position: center;
+   color: aliceblue;
+   font-family: 'Courier New', Courier, monospace;
+   text-align: center;
+   font-size: 100px;
+}
+div{
+   background-image: linear-gradient(rgb(255, 145, 0), rgb(6, 126, 52));
+   text-align: center;
+}
