@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class start {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your location:-");
+		String location=sc.next();
+		if(location.equalsIgnoreCase("Odisha")) {
+			System.out.println("The soil of your region is of Red soil type.");
+			System.out.println("Soil has high Iron content and fairly rich in Potash.");
+			System.out.println("Crops like Rice and Potatoes are good for growing in your region.");
+			System.out.println("You can use organic fertilisers like green manure,farmyard manure.");
+			
+		}
+		else if(location.equalsIgnoreCase("Maharashtra")){
+			System.out.println("The soil of your region is of Black soil type.");
+			System.out.println("Crops like Cotton and Sunflower are good for growing in your region.");
+			System.out.println("It has high percentage of sand,alumina and its poor in nitrogen.");
+			System.out.println("As biofertilisers aren't effective chemical fertilisers like NPK 16-16-16, NPK 19-19-19, NPK 20-20-20");
+		}
+		else if(location.equalsIgnoreCase("Bihar")) {
+			System.out.println("The soil of your region is of Alluvial soil type.");
+			System.out.println("Crops like Wheat and Sugarcane are good for growing in your region.");
+			System.out.println("Its rich in Zinc,Cobalt and Copper.");
+		}
+		else {
+			System.out.println("Location unavailable!!");
+		}
+
+	}
+
+}
