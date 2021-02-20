@@ -7,11 +7,8 @@ dht DHT;
 
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int rain_detect_in=A1;
-int soil_moisture_in=A2;
-int soil_moisture_value;
-int soil_moisture_limit=300;
 int alert = 13;
+int rain_detect_in=A1;
 const int rainMin = 0;     // sensor minimum
 const int rainMax = 1024;
 
@@ -36,22 +33,22 @@ void setup() {
 }
 
 void loop(){
-  checkTemp();
-  //detectRain();
+  //checkTemp();
+  detectRain();
 }// end loop()
 
 void detectRain(){
       int rainReading = analogRead(rain_detect_in);
       int rain_mapped= map(rainReading, rainMin, rainMax, 0, 3);
+      lcd.clear();
+      lcd.setCursor(0,0);
+      Serial.println("Rain possiblility "+(rainMax-rain_mapped));      
        switch (rain_mapped) { 
-         case 0:    
-            Serial.println("Rain Warning");
-            break;
-         case 1:    
-            Serial.println("Not Raining");
-            break;
+         case 0:    lcd.print("......HEAVY....."); lcd.setCursor(0,1); lcd.print(".....RAIN....." );  break;
+         case 1:    lcd.print("......MIGHT....."); lcd.setCursor(0,1); lcd.print(".....RAIN....." ); showAlert(); break;
+         case 2:    lcd.print("......NOT......."); lcd.setCursor(0,1); lcd.print("...RAINING...." );  break;
         }
-  delay(1000);
+    delay(3000);
       
       
   
@@ -62,24 +59,19 @@ void checkTemp(){
     DHT.read11(dht_in);  
     lcd.createChar(3,degree);
     lcd.clear();
-    lcd.setCursor(0,0); lcd.print("TEMP ="); lcd.print(DHT.temperature); lcd.write(3); lcd.print("C");
-    lcd.setCursor(0,1); lcd.print("Humidity  ="); lcd.print(DHT.humidity); lcd.print(" %");
+    lcd.setCursor(0,0); lcd.print("TEMP   ="); lcd.print(DHT.temperature); lcd.write(3); lcd.print("C");
+    lcd.setCursor(0,1); lcd.print("HUMID  ="); lcd.print(DHT.humidity); lcd.print(" %");
     
-    Serial.print("Temperature ");
-    Serial.print(DHT.temperature); 
-    Serial.println("C  ");
-      
-    Serial.print("Temp = ");
-    Serial.print(DHT.humidity);
-    Serial.print("%  ");
+    Serial.print("Temperature ");    Serial.print(DHT.temperature);     Serial.println("C  ");      
+    Serial.print("Humidity = ");    Serial.print(DHT.humidity);    Serial.print("%  ");
     
-    delay(5000);//Wait 5
+    delay(3000);
   }
 
 
 
 
-void showError(){  
+void showAlert(){  
     for(int i=0;i<3;i++){
       digitalWrite(alert, HIGH);
       delay(100);
