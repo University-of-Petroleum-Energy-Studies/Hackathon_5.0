@@ -13,6 +13,7 @@ import 'package:flutter/widgets.dart';
 // enum Department { treasury, state }
 // BuildContext context;
 
+/// A material design dialog.
 ///
 /// This dialog widget does not have any opinion about the contents of the
 /// dialog. Rather than using this widget directly, consider using [CustomAlertDialog]

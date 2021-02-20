@@ -31,7 +31,7 @@ class SelfAssess {
   List<String> answerOk = ['You are risk free', 'Stay Home, Stay Safe'];
 
   List<String> answerAtRisk = [
-    'Currently you are at risk, please contact nearby authorities about your situation and have a covid-19 test',
+    'Currently you are at risk, please contact nearby authorities about your situation and have a COVID-19 test',
     'Please avoid going to public places and being in physical contact with anyone'
   ];
 
