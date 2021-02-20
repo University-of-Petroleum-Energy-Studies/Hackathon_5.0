@@ -42,11 +42,11 @@ void detectRain(){
       int rain_mapped= map(rainReading, rainMin, rainMax, 0, 3);
       lcd.clear();
       lcd.setCursor(0,0);
-      Serial.println("Rain possiblility "+(rainMax-rain_mapped));      
+      Serial.print("Rain possiblility "); Serial.print((rainMax-rain_mapped));     
        switch (rain_mapped) { 
-         case 0:    lcd.print("......HEAVY....."); lcd.setCursor(0,1); lcd.print(".....RAIN....." );  break;
-         case 1:    lcd.print("......MIGHT....."); lcd.setCursor(0,1); lcd.print(".....RAIN....." ); showAlert(); break;
-         case 2:    lcd.print("......NOT......."); lcd.setCursor(0,1); lcd.print("...RAINING...." );  break;
+         case 0:     lcd.print("......HEAVY....." ); lcd.setCursor(0,1); lcd.print(".....RAIN....." ); showAlert(); break;
+         case 1:    lcd.print("......MIGHT....." ); lcd.setCursor(0,1); lcd.print(".....RAIN....." ); showAlert(); break;
+         case 2:    lcd.print("......NOT......" ); lcd.setCursor(0,1); lcd.print("...RAINING...." );  break;
         }
     delay(3000);
       
