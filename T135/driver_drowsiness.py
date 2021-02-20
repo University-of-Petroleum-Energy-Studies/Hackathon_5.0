@@ -1,13 +1,25 @@
+#Importing OpenCV Library for basic image processing functions
 import cv2
-import dlib
+# playsound for playing alarm 
+from playsound import playsound
+# Numpy for array related functions
 import numpy as np
+# Dlib for deep learning based Modules and face landmark detection
+import dlib
+#face_utils for basic operations of conversion
 from imutils import face_utils
+# SMS for sending sms 
+import sms
 
-cap=cv2.VideoCapture(0)
 
-detector=dlib.get_frontal_face_detector()
+#Initializing the camera and taking the instance
+cap = cv2.VideoCapture(0)
+
+#Initializing the face detector and landmark detector
+detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("C:\\Users\\Vikrant\\Desktop\\python_codeWithHarry\\Drowsiness dectation system.py\\shape_predictor_68_face_landmarks.dat")
 
+#status marking for current state
 sleep = 0
 drowsy = 0
 active = 0
@@ -31,6 +43,7 @@ def blinked(a,b,c,d,e,f):
 		return 1
 	else:
 		return 0
+
 
 while True:
     _, frame = cap.read()
@@ -61,8 +74,8 @@ while True:
         	sleep+=1
         	drowsy=0
         	active=0
-        	if(sleep>10):
-        		status="WARNING,SLEEPING !!!"
+        	if(sleep>20):
+        		status=sms.sendsms();"WARNING,SLEEPING massage sent successful to your personals!!!";playsound("C:\\Users\\Vikrant\\Desktop\python_codeWithHarry\\Drowsiness dectation system.py\\Censored_Beep-Mastercard-569981218.mp3")
         		color = (0,0,255)
 
         elif(left_blink==1 or right_blink==1):
@@ -70,7 +83,7 @@ while True:
         	active=0
         	drowsy+=1
         	if(drowsy>8):
-        		status="Drowsy,Take Rest !"
+        		status="Drowsy,Take Rest !";playsound("C:\\Users\\Vikrant\\Desktop\\python_codeWithHarry\\Drowsiness dectation system.py\\salamisound-3834747-alarm-electric-alarm-clock.mp3")
         		color = (255,0,0)
 
         else:
@@ -87,7 +100,7 @@ while True:
         	(x,y) = landmarks[n]
         	cv2.circle(face_frame, (x, y), 1, (255, 255, 255), -1)
 
-    
+    cv2.imshow("Frame", frame)
     cv2.imshow("Result Of Detector", face_frame)
     key = cv2.waitKey(1)
     if key == 27:
