@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- socket.io frontend client. -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+
+    <!-- Display lobbyid, courtesy ejs -->
+    <script>
+      const ROOM_ID = "<%= lobbyId %>";
+    </script>
+  </head>
+  <body>
+    <div class="grid">
+      <video id="video" width="320" height="240" autoplay muted></video>
+    </div>
+    HELLO YO I'M ROLLING!
+
+    <!-- Link to script -->
+    <script src="script.js"></script>
+  </body>
+</html>
