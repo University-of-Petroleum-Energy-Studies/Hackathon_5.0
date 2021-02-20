@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Self Learn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px; background:Black; color:White;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Self Learn</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Customized Courses</a>
+    <a href="#roadmap" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Organised RoadMap</a>
+    <a href="#webrary" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Webrary</a>
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Our Team</a>
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Why Self Learn?</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact Us</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">?</a>
+  <span>Self Learn</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Getting Started</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>With Self Learn</b></h1>
+  </div>
+  <div>
+  <p>&emsp;&emsp;One Stop Solution For All Your Needs.</p>
+  </div>
+      
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">�</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Customized Courses</b></h1>
+    <p>We provide a number of modified courses which are curated according to industrial standards by our team of experts.</p>
+  </div>
+  
+  <!-- Roadmap -->
+   <div class="w3-container" id="roadmap" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Organised Roadmap</b></h1>
+    <p>We provide a step-by-step guide as to how to proceed towards mastering a particular domain from scratch.</p>
+  </div>
+  
+  <!-- Webrary -->
+   <div class="w3-container" id="webrary" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Webrary</b></h1>
+    <p>No need to scour the internet to find  the right materials to study, because here our experts will provide you the best handpicked resources from the web, which they have used themselves for learning.</p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Our Team</b></h1>
+    <p><b>MEET OUR TEAM!</b></p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3>Amartya Yadav</h3>
+          
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3>Abhinav Awasthi</h3>
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3>Ayush Uttam</h3>
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="" alt="" style="width:100%">
+        <div class="w3-container">
+          <h3>Shubham Pandey</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Why Self Learn?</b></h1>
+    <p>Our vision is to provide students with the resources and opportunities to learn depending on their determination and hard work rather than on money.</p>
+  </div>
+
+  
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact Us</b></h1>
+    <p>We love meeting new people!</p>
+    
+      <a href="mailto:abhinavawasthiofficial@gmail.com"><button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button></a>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container--> 
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Krafted with 💖 by 
+<a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Self Learn</a>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
