@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Schools">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="287dp"
+        android:layout_height="269dp"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="145dp"
+        tools:srcCompat="@drawable/images" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Learning Zone!!"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="48dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="School of Computer Science"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="472dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

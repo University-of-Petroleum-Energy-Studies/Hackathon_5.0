@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button" type="id" />
+    <item name="resetPasswordLocal" type="id" />
+    <item name="profileImage" type="id" />
+    <item name="profileName" type="id" />
+    <item name="imageView2" type="id" />
+    <item name="profileEmail" type="id" />
+    <item name="imageView3" type="id" />
+    <item name="textView4" type="id" />
+    <item name="textView3" type="id" />
+    <item name="profilePhone" type="id" />
+    <item name="imageView4" type="id" />
+    <item name="textView5" type="id" />
+    <item name="verifyMsg" type="id" />
+    <item name="resendCode" type="id" />
+    <item name="changeProfile" type="id" />
+</resources>
