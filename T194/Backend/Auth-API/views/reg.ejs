@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEDI TEMPLE</title>
+    <!-----------stylesheet------------------->
+    <link rel="stylesheet" href="css/reg.css" />
+    <!-----------fonts------------------->
+    <link
+      href="https://fonts.googleapis.com/css?family=Aleo"
+      rel="stylesheet"
+    />
+    <!-----------fav icon------------------->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  </head>
+  <body class="home">
+    <header>
+      <!--NAVBAR------------------------>
+      <div class="h-nav">
+        <ul class="h-ul">
+          <li class="nav-li"><a href="#">HOME</a></li>
+          <li class="nav-li"><a href="#">ABOUT US</a></li>
+        </ul>
+      </div>
+      <!--FORM-------------------------->
+      <div class="container">
+        <form action="/user/register" method="POST" class="l-form">
+          <h4 class="l-h4">Jedi Temple | Registration</h4>
+          <input
+            type="text"
+            name="username"
+            class="l-box"
+            required
+            placeholder="Usernamne"
+          />
+          <input
+            type="password"
+            name="password"
+            class="userPass l-box"
+            required
+            placeholder="Password"
+          />
+          <input
+            type="text"
+            name="email"
+            class="userEmail l-box"
+            required
+            placeholder="Email-id"
+          />
+          <input
+            type="text"
+            name="fullname"
+            class="l-box"
+            required
+            placeholder="Full Name"
+          />
+          <input
+            type="text"
+            name="phoneno"
+            class="phoneNo l-box"
+            placeholder="Contact No."
+          />
+          <input
+            type="text"
+            name="usertype"
+            class="userType l-box"
+            required
+            placeholder="Faculty/student"
+          />
+          <button type="submit" class="l-submit" id="submit">REGISTER</button>
+        </form>
+
+        <!-- Login instead -->
+        <div class="alt-login">
+          <h4 class="l-h4">Already a member?</h4>
+          <p><a href="/login">Login</a></p>
+        </div>
+      </div>
+    </header>
+    <script src="script-reg.js"></script>
+  </body>
+</html>
