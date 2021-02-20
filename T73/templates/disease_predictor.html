@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    
+    
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+
+    <!-- Hover dropdown -->
+    <style>
+      .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        font-size: 10px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 26px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #ddd;}
+
+      .dropdown:hover .dropdown-content {display: block;}
+
+      .dropdown:hover .dropbtn {background-color: #3e8e41;}
+      </style>
+
+    <title>Heart Disease Probability Detector</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Heart-Disease Detector</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us!</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+          </li> -->
+          <li class="nav-item "><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+          
+          <li class="nav-item active"><a href="{{ url_for('disease_predictor') }}" class="nav-link">Disease predictor</a></li>
+          <li class="nav-item "><a href="{{ url_for('heart_predictor') }}" class="nav-link">Heart disease Predictor</a></li>
+          
+          
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+      <div class="container">
+        <h2 class="text-center mt-3"> Disease Probability Detector<br></h2>
+        <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+        <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+
+        <center>
+          <h3>You have high chances of having these diseases:</h3>
+          {% for d,p in top.items() %}
+            <h4>{{ d }}</h4>
+            <div class="dropdown">
+              <button class="dropbtn">Precautions</button>
+              <div class="dropdown-content">
+                {{ p[0] }},<br>
+                {{ p[1] }},<br>
+                {{ p[2] }},<br>
+                {{ p[3] }}<br>
+              </div>
+            </div>
+          {% endfor %}
+        <br><br>
+        <form action="/disease_predictor" method="post">
+          <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="symptoms">
+            <option value=""></option>
+            {% for x in sl %}
+            <option>{{ x }}</option>
+            {% endfor %}
+          </select>
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+        </center>
+      </div>
+          <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html> 

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">    
+    
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+
+    <title>Heart Disease Probability Detector</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Heart-Disease Detector</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us!</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+          </li> -->
+          <li class="nav-item "><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+          <li class="nav-item "><a href="{{ url_for('disease_predictor') }}" class="nav-link">Disease predictor</a></li>
+          <li class="nav-item active"><a href="{{ url_for('heart_predictor') }}" class="nav-link">Heart Disease Predictor</a></li>
+          
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+<div class="container">
+  <h2 class="text-center mt-3"> Heart Disease Probability Detector<br></h2>
+  <h2 class="text-center mt-3">There is {{ pred }}% chance of Heart disease</h2>
+  
+  <!-- <h2>Directions:</h2>
+    age - age in years
+
+    <br>sex - (1 = male; 0 = female)
+
+    <br>cp - chest pain type
+
+<br>&nbsp&nbsp&nbsp&nbsp    0: Typical angina: chest pain related decrease blood supply to the heart
+<br>&nbsp&nbsp&nbsp&nbsp    1: Atypical angina: chest pain not related to heart
+<br>&nbsp&nbsp&nbsp&nbsp    2: Non-anginal pain: typically esophageal spasms (non heart related)
+<br> &nbsp&nbsp&nbsp&nbsp   3: Asymptomatic: chest pain not showing signs of disease
+
+<br>    trestbps - resting blood pressure (in mm Hg on admission to the hospital) anything above 130-140 is typically cause for concern
+
+<br>    chol - serum cholestoral in mg/dl serum = LDL + HDL + .2 * triglycerides above 200 is cause for concern
+
+<br>    fbs - (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false) '>126' mg/dL signals diabetes
+
+<br>    restecg - resting electrocardiographic results
+
+<br> &nbsp&nbsp&nbsp&nbsp   0: Nothing to note
+<br> &nbsp&nbsp&nbsp&nbsp   1: ST-T Wave abnormality can range from mild symptoms to severe problems signals non-normal heart beat
+<br> &nbsp&nbsp&nbsp&nbsp   2: Possible or definite left ventricular hypertrophy Enlarged heart's main pumping chamber
+
+<br>    thalach - maximum heart rate achieved
+
+<br>    exang - exercise induced angina (1 = yes; 0 = no)
+
+<br>    oldpeak - ST depression induced by exercise relative to rest looks at stress of heart during excercise unhealthy heart will stress more
+
+<br>    slope - the slope of the peak exercise ST segment
+
+<br>  &nbsp&nbsp&nbsp&nbsp  0: Upsloping: better heart rate with excercise (uncommon)
+<br>  &nbsp&nbsp&nbsp&nbsp  1: Flatsloping: minimal change (typical healthy heart)
+<br>  &nbsp&nbsp&nbsp&nbsp  2: Downslopins: signs of unhealthy heart
+
+<br>    ca - number of major vessels (0-3) colored by flourosopy colored vessel means the doctor can see the blood passing through the more blood movement the better (no clots)
+
+<br>    thal - thalium stress result 1,3: normal 6: fixed defect: used to be defect but ok now 7: reversable defect: no proper blood movement when excercising -->
+
+<br><br>
+  <form action="/heart_predictor" method="POST">
+    
+    <div class="form-group">
+      <label for="age Value">Enter Your Age Value</label>
+      <input type="text" class="form-control" id="age" name="age" placeholder="Enter Your age value">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select custom-select class="form-control custom-select" name="sex" id="sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cp">Chest pain</label>
+      <select custom-select class="form-control custom-select" name="cp" id="cp">
+        <option value="0">Typical angina</option>
+        <option value="1">Atypical angina</option>
+        <option value='2'>Non-anginal pain</option>
+        <option value='3'>Asymptomatic</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="trestbps Value">Enter Your trestbps Value</label>
+      <input type="text" class="form-control" id="trestbps" name="trestbps" placeholder="Enter Your trestbps value">
+    </div>
+    <div class="form-group">
+      <label for="chol Value">Enter Your chol Value</label>
+      <input type="text" class="form-control" id="chol" name="chol" placeholder="Enter Your chol value">
+    </div>
+    <div class="form-group">
+      <label for="fbs">Fasting blood sugar</label>
+      <select custom-select class="form-control custom-select" name="fbs" id="fbs">
+        <option value="0">fbs less than 120 mg/dl</option>
+        <option value="1">fbs more than 120 mg/dl</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="restecg">RestECG</label>
+      <select custom-select class="form-control custom-select" name="restecg" id="restecg">
+        <option value="0">Nothing to note</option>
+        <option value="1">ST-T Wave abnormality can range from mild symptoms to severe problems signals non-normal heart beat</option>
+        <option value="2">Possible or definite left ventricular hypertrophy Enlarged heart's main pumping chamber</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="thalach Value">Enter Your thalach Value</label>
+      <input type="text" class="form-control" id="thalach" name="thalach" placeholder="Enter Your thalach value">
+    </div>
+    <div class="form-group">
+      <label for="exang">Exercise induced angina</label>
+      <select custom-select class="form-control custom-select" name="exang" id="exang">
+        <option value="1">True</option>
+        <option value="0">False</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="oldpeak Value">Enter Your oldpeak Value</label>
+      <input type="text" class="form-control" id="oldpeak" name="oldpeak" placeholder="Enter Your oldpeak value">
+    </div>
+    <div class="form-group">
+      <label for="slope">Slope of peak exercise ST segment</label>
+      <select custom-select class="form-control custom-select" name="slope" id="slope">
+        <option value="0">Unsloping</option>
+        <option value="1">Flat-sloping</option>
+        <option value="3">Down-sloping</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="ca">No. of major vessels colored by fluoroscopy</label>
+      <select custom-select class="form-control custom-select" name="ca" id="ca">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Thalium Value">Enter Your thalium Value</label>
+      <input type="text" class="form-control" id="thal" name="thal" placeholder="Enter Your thalium value">
+    </div>
+
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+  
+</html>
