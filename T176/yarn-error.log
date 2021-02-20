@@ -1,0 +1,40 @@
+Arguments: 
+  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js config get registry
+
+PATH: 
+  /media/dell/3ADC8576DC852D67/Users/DELL/Documents/Personal Projects/node_modules/.bin:/media/dell/3ADC8576DC852D67/Users/DELL/Documents/node_modules/.bin:/media/dell/3ADC8576DC852D67/Users/DELL/node_modules/.bin:/media/dell/3ADC8576DC852D67/Users/node_modules/.bin:/media/dell/3ADC8576DC852D67/node_modules/.bin:/media/dell/node_modules/.bin:/media/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/dell/.npm/_npx/c67e74de0542c87c/node_modules/.bin:/home/dell/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ../package.json: EACCES: permission denied, write
+      at writeSync (fs.js:679:3)
+      at SyncWriteStream._write (internal/fs/sync_write_stream.js:24:3)
+      at doWrite (_stream_writable.js:403:12)
+      at writeOrBuffer (_stream_writable.js:387:5)
+      at SyncWriteStream.Writable.write (_stream_writable.js:318:11)
+      at ConsoleReporter.warn (/snap/node/3292/lib/cli.js:96792:17)
+      at warn (/snap/node/3292/lib/cli.js:51521:23)
+      at module.exports.exports.default (/snap/node/3292/lib/cli.js:37358:7)
+      at /snap/node/3292/lib/cli.js:51532:51
+      at Generator.next (<anonymous>)
+
+npm manifest: 
+  {
+    "name": "agrivend",
+    "version": "0.1.0",
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
