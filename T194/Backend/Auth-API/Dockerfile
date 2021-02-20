@@ -7,7 +7,7 @@ COPY package.json package-lock.json ./
 
 RUN npm ci
 
-COPY . .
+COPY .src/ .
 
 #Runtime container
 FROM node:15.8.0-alpine3.10
