@@ -8,6 +8,8 @@ import numpy as np
 import dlib
 #face_utils for basic operations of conversion
 from imutils import face_utils
+# SMS for sending sms 
+import sms
 
 
 #Initializing the camera and taking the instance
@@ -73,7 +75,7 @@ while True:
         	drowsy=0
         	active=0
         	if(sleep>20):
-        		status="WARNING,SLEEPING massage sent successful to your personals!!!";playsound("C:\\Users\\Vikrant\\Desktop\python_codeWithHarry\\Drowsiness dectation system.py\\Censored_Beep-Mastercard-569981218.mp3")
+        		status=sms.sendsms();"WARNING,SLEEPING massage sent successful to your personals!!!";playsound("C:\\Users\\Vikrant\\Desktop\python_codeWithHarry\\Drowsiness dectation system.py\\Censored_Beep-Mastercard-569981218.mp3")
         		color = (0,0,255)
 
         elif(left_blink==1 or right_blink==1):
