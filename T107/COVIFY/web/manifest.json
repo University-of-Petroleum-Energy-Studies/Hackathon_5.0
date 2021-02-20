@@ -1,0 +1,22 @@
+{
+    "name": "Covify",
+    "short_name": "Covify",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#222A45",
+    "theme_color": "#FFFFFF",
+    "description": "Application that provides statistics and information about Covid-19",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [{
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
