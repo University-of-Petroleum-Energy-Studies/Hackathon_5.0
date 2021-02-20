@@ -1,3 +1,4 @@
+const cv = require("opencv4nodejs");
 const path = require("path");
 const express = require("express");
 // Create an instance of express (Start the server)
@@ -15,12 +16,21 @@ console.log(`running on ${HOST_URL}`);
 
 function initBlackboard() {
   app.get("/", (req, res) => {
-    res.render("bb-test");
-  });
+    res.render("bb");
 
-  setInterval(() => {
-    io.emit("image", "some data");
-  }, 1000);
+    // OpenCV way to access camStream from front-end.
+    const FPS = 30;
+    const vCap = new cv.VideoCapture(0);
+    vCap.set(cv.CAP_PROP_FRAME_WIDTH, 320);
+    vCap.set(cv.CAP_PROP_FRAME_HEIGHT, 240);
+    setInterval(() => {
+      const frame = vCap.read(); // vCap.read() returns mat obj.
+      // Encode mat obj into base64 encoding, for io transmission.
+      // Listen for the "jediStream" event on frontend socket.
+      const image = cv.imencode(".jpeg", frame).toString("base64");
+      io.emit("jediStream", image);
+    }, 1000 / FPS);
+  });
 }
 
 initBlackboard();

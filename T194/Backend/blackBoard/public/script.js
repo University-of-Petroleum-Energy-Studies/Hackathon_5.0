@@ -1,4 +1,5 @@
 const socket = io.connect("http://localhost:3000");
-socket.on("image", (data) => {
-  console.log("data", data);
+socket.on("jediStream", (data) => {
+  const bbCanVasObj = document.getElementById("bbCanvas");
+  bbCanVasObj.src = `data:image/jpeg;base64,${data}`;
 });
