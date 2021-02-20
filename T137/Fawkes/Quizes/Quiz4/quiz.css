@@ -1,0 +1,191 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ body {
+	/* align-items: center; */
+	 /* background-color:  rgb(204, 178, 64);	  */
+	/* background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png"); */
+	 /* background-color: #FF6291;  */
+	/* background: linear-gradient(red,blue); */
+
+
+	background: linear-gradient(45deg, rgba(254, 246, 210, 0.53) 0%, rgba(254, 246, 210, 0.53) 14.286%,rgba(221, 240, 216, 0.53) 14.286%, rgba(221, 240, 216, 0.53) 28.572%,rgba(188, 233, 223, 0.53) 28.572%, rgba(188, 233, 223, 0.53) 42.858%,rgba(156, 227, 229, 0.53) 42.858%, rgba(156, 227, 229, 0.53) 57.144%,rgba(123, 220, 235, 0.53) 57.144%, rgba(123, 220, 235, 0.53) 71.42999999999999%,rgba(90, 214, 242, 0.53) 71.43%, rgba(90, 214, 242, 0.53) 85.71600000000001%,rgba(57, 207, 248, 0.53) 85.716%, rgba(57, 207, 248, 0.53) 100.002%),linear-gradient(135deg, rgb(246, 99, 200) 0%, rgb(246, 99, 200) 12.5%,rgb(223, 98, 196) 12.5%, rgb(223, 98, 196) 25%,rgb(199, 97, 192) 25%, rgb(199, 97, 192) 37.5%,rgb(176, 96, 188) 37.5%, rgb(176, 96, 188) 50%,rgb(152, 95, 184) 50%, rgb(152, 95, 184) 62.5%,rgb(129, 94, 180) 62.5%, rgb(129, 94, 180) 75%,rgb(105, 93, 176) 75%, rgb(105, 93, 176) 87.5%,rgb(82, 92, 172) 87.5%, rgb(82, 92, 172) 100%);
+	/* color: rgba(0, 200, 255, 1); */
+	color: #8430ac;
+	display: flex;
+	font: normal 14px Arial, sans-serif;
+	height: 100vh;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
+} 
+
+/* .background {
+		background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");	
+		background-size: 100%;
+
+		opacity: .5;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+} */
+	
+
+.content {
+	 background: rgba(0, 100, 200, .15); 
+	
+	border: 1px solid rgba(0, 100, 200, .25);
+	border-radius: 3px;
+	box-shadow: 0 0 10px 1px rgba(0, 100, 200, .5);
+	padding: 30px;
+	z-index: 2;
+}
+
+.container{
+	/* height: 330px; */
+	height: 400px;
+	width: 1000px;
+	/* width: 540px; */
+	position: absolute;
+	border-radius: 10px;
+	top:50%;
+	left:50%;
+	transform: translateX(-50%) translateY(-50%);
+	/* background: rgba(255, 255, 255, 0.5); */
+	background: linear-gradient(to right bottom, 
+        rgba(255,255,255, .7), 
+        rgba(255,255,255,.3));
+	padding: 20px;
+	border: 2px solid #4611a813;
+	/* box-shadow: 0 0 8px 3px #fff; */
+	box-shadow: 30px 30px rgba(128, 128, 128, 0.267);
+}
+
+.title{
+	padding-top: 20px;
+	text-align: center;
+	font-size: 36px;
+	text-transform: uppercase;
+	color: #08038C;
+}
+
+.question{
+	padding: 20px;
+	font-size: 22px;
+	background: #08038C;
+	border-radius: 20px;
+	margin: 10px 0 10px 0;
+	font-family: 'Montserrat', sans-serif;
+    color: #f6f6f6;
+}
+
+.option{
+	width: 470px;
+	display: inline-block;
+	padding: 10px 0 10px 15px;
+	vertical-align: middle;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 10px 0 10px 10px;
+	color: #000000;
+	border-radius: 20px;
+}
+
+.option:hover{
+	background: #08038C;
+	color: #f6f6f6;
+}
+
+/* .next-btn{
+	border: none;
+	outline: none;
+	background: rgba(255, 25, 255, 0.5);
+	width: 100px;
+	height: 35px;
+	border-radius: 20px;
+	cursor: pointer;
+	float: right;
+	margin: 10px;
+}
+
+.next-btn:hover{
+	background: #08038C;
+	color: #f6f6f6;
+} */
+
+
+
+.next-btn {
+	border-radius: 100px;
+	
+	border: 1px solid rgba(10, 180, 180, 1);
+	background: rgba(9, 43, 95, 0.6);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: rgb(184, 184, 187);
+	margin-top: 20px;
+	padding: 10px 50px;
+	cursor: pointer;
+	float: right;
+	
+	transition: .4s;
+	/* a:hover {
+	  background: rgba(20, 20, 20, .8);
+	  padding: 10px 80px; */
+	/* } */
+  }
+
+  .next-btn:hover{
+
+    box-shadow: 
+                0 2px 2px 0 #120772 inset,
+                0 2px 2px 0 #120772 ,
+                0 2px 2px 0 #120772 inset,
+                0 2px 2px 0 #120772;
+}
+
+
+
+
+.result{
+	height: 250px;
+	width: 540px;
+	text-align: center;
+	font-size: 75px;
+	f
+}
+
+.option input:checked .option{
+	background: #08038C;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
