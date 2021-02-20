@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.buyorsell__buy,
+.buyorsell__sell
+{
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3e68ff;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 20px;
+    min-width: 10ch;
+    min-height: 44px;
+    text-align: center;
+    line-height: 1.1;
+    margin: 20px;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
+}
+
+.buyorsell__buy:hover,
+.buyorsell__sell:hover {
+    transition: background-color 0.8s ease;
+    background-color: white;
+    color: black;
+}
+
+.buyorsell__heading {
+    text-align: center;
+}
+
+.buyorsell__h1 {
+    letter-spacing: 5px;
+}
+
+.buyorsell__buttons {
+    text-align: center;
+}
