@@ -1,0 +1,276 @@
+,YEAR,STATE,CROP,YEILD,PROFIT,COST OF CULTIVATION
+0,2008,Maharashtra,Rice,1.1,3465,9273
+1,2009,Maharashtra,Rice,1.2,3515,9898
+2,2010,Maharashtra,Rice,1.3,3565,10523
+3,2011,Maharashtra,Rice,1.4,3615,11148
+4,2012,Maharashtra,Rice,1.5,3665,11773
+5,2013,Maharashtra,Rice,1.6,3715,12398
+6,2014,Maharashtra,Rice,1.7,3765,13023
+7,2015,Maharashtra,Rice,1.8,3815,13648
+8,2016,Maharashtra,Rice,1.9,3865,14273
+9,2017,Maharashtra,Rice,2,3915,14898
+10,2018,Maharashtra,Rice,2.1,3965,15523
+11,2008,Maharashtra,Cotton,1.89,7501,34057
+12,2009,Maharashtra,Cotton,1.91,8033,35557
+13,2010,Maharashtra,Cotton,1.93,8565,37057
+14,2011,Maharashtra,Cotton,1.95,9097,38557
+15,2012,Maharashtra,Cotton,1.97,9629,40057
+16,2013,Maharashtra,Cotton,1.99,10161,41557
+17,2014,Maharashtra,Cotton,2.01,10693,43057
+18,2015,Maharashtra,Cotton,2.03,11225,44557
+19,2016,Maharashtra,Cotton,2.05,11757,46057
+20,2017,Maharashtra,Cotton,2.07,12289,47557
+21,2018,Maharashtra,Cotton,2.09,12821,49057
+22,2008,Maharashtra,Sugarcane,2.2,7014,1700
+23,2009,Maharashtra,Sugarcane,2.7,8154,2554
+24,2010,Maharashtra,Sugarcane,3.2,9294,3408
+25,2011,Maharashtra,Sugarcane,3.7,10434,4262
+26,2012,Maharashtra,Sugarcane,4.2,11574,5116
+27,2013,Maharashtra,Sugarcane,4.7,12714,5970
+28,2014,Maharashtra,Sugarcane,5.2,13854,6824
+29,2015,Maharashtra,Sugarcane,5.7,14994,7678
+30,2016,Maharashtra,Sugarcane,6.2,16134,8532
+31,2017,Maharashtra,Sugarcane,6.7,17274,9386
+32,2018,Maharashtra,Sugarcane,7.2,18414,10240
+33,2008,Maharashtra,Wheat,3.43,5000,28806
+34,2009,Maharashtra,Wheat,3.5,5300,30051
+35,2010,Maharashtra,Wheat,3.57,5600,31296
+36,2011,Maharashtra,Wheat,3.64,5900,32541
+37,2012,Maharashtra,Wheat,3.71,6200,33786
+38,2013,Maharashtra,Wheat,3.78,6500,35031
+39,2014,Maharashtra,Wheat,3.85,6800,36276
+40,2015,Maharashtra,Wheat,3.92,7100,37521
+41,2016,Maharashtra,Wheat,3.99,7400,38766
+42,2017,Maharashtra,Wheat,4.06,7700,40011
+43,2018,Maharashtra,Wheat,4.13,8000,41256
+44,2008,Maharashtra,Millets,2.3,5047,25000
+45,2009,Maharashtra,Millets,2.6,5349,25644
+46,2010,Maharashtra,Millets,2.9,5651,26288
+47,2011,Maharashtra,Millets,3.2,5953,26932
+48,2012,Maharashtra,Millets,3.5,6255,27576
+49,2013,Maharashtra,Millets,3.8,6557,28220
+50,2014,Maharashtra,Millets,4.1,6859,28864
+51,2015,Maharashtra,Millets,4.4,7161,29508
+52,2016,Maharashtra,Millets,4.7,7463,30152
+53,2017,Maharashtra,Millets,5,7765,30796
+54,2018,Maharashtra,Millets,5.3,8067,31440
+55,2008,Kerala,Rice,1.15,2401,5236
+56,2009,Kerala,Rice,1.28,3907,6496
+57,2010,Kerala,Rice,1.41,5413,7756
+58,2011,Kerala,Rice,1.54,6919,9016
+59,2012,Kerala,Rice,1.67,8425,10276
+60,2013,Kerala,Rice,1.8,9931,11536
+61,2014,Kerala,Rice,1.93,11437,12796
+62,2015,Kerala,Rice,2.06,12943,14056
+63,2016,Kerala,Rice,2.19,14449,15316
+64,2017,Kerala,Rice,2.32,15955,16576
+65,2018,Kerala,Rice,2.45,17461,17836
+66,2008,Kerala,Cardamom,1.07,2214,5642
+67,2009,Kerala,Cardamom,1.24,2928,7104
+68,2010,Kerala,Cardamom,1.41,3642,8566
+69,2011,Kerala,Cardamom,1.58,4356,10028
+70,2012,Kerala,Cardamom,1.75,5070,11490
+71,2013,Kerala,Cardamom,1.92,5784,12952
+72,2014,Kerala,Cardamom,2.09,6498,14414
+73,2015,Kerala,Cardamom,2.26,7212,15876
+74,2016,Kerala,Cardamom,2.43,7926,17338
+75,2017,Kerala,Cardamom,2.6,8640,18800
+76,2018,Kerala,Cardamom,2.77,9354,20262
+77,2008,Kerala,Sugarcane,1.54,570,4600
+78,2009,Kerala,Sugarcane,1.76,710,6560
+79,2010,Kerala,Sugarcane,1.98,850,8520
+80,2011,Kerala,Sugarcane,2.2,990,10480
+81,2012,Kerala,Sugarcane,2.42,1130,12440
+82,2013,Kerala,Sugarcane,2.64,1270,14400
+83,2014,Kerala,Sugarcane,2.86,1410,16360
+84,2015,Kerala,Sugarcane,3.08,1550,18320
+85,2016,Kerala,Sugarcane,3.3,1690,20280
+86,2017,Kerala,Sugarcane,3.52,1830,22240
+87,2018,Kerala,Sugarcane,3.74,1970,24200
+88,2008,Kerala,Ginger,1.74,790,7450
+89,2009,Kerala,Ginger,2.01,1250,7915
+90,2010,Kerala,Ginger,2.28,1710,8380
+91,2011,Kerala,Ginger,2.55,2170,8845
+92,2012,Kerala,Ginger,2.82,2630,9310
+93,2013,Kerala,Ginger,3.09,3090,9775
+94,2014,Kerala,Ginger,3.36,3550,10240
+95,2015,Kerala,Ginger,3.63,4010,10705
+96,2016,Kerala,Ginger,3.9,4470,11170
+97,2017,Kerala,Ginger,4.17,4930,11635
+98,2018,Kerala,Ginger,4.44,5390,12100
+99,2008,Kerala,Coconut,2.45,7904,12014
+100,2009,Kerala,Coconut,2.72,9364,13548
+101,2010,Kerala,Coconut,2.99,10824,15082
+102,2011,Kerala,Coconut,3.26,12284,16616
+103,2012,Kerala,Coconut,3.53,13744,18150
+104,2013,Kerala,Coconut,3.8,15204,19684
+105,2014,Kerala,Coconut,4.07,16664,21218
+106,2015,Kerala,Coconut,4.34,18124,22752
+107,2016,Kerala,Coconut,4.61,19584,24286
+108,2017,Kerala,Coconut,4.88,21044,25820
+109,2018,Kerala,Coconut,5.15,22504,27354
+110,2008,Sikkim,Rice,2.05,4012,10240
+111,2009,Sikkim,Rice,2.18,4712,11165
+112,2010,Sikkim,Rice,2.31,5412,12090
+113,2011,Sikkim,Rice,2.44,6112,13015
+114,2012,Sikkim,Rice,2.57,6812,13940
+115,2013,Sikkim,Rice,2.7,7512,14865
+116,2014,Sikkim,Rice,2.83,8212,15790
+117,2015,Sikkim,Rice,2.96,8912,16715
+118,2016,Sikkim,rice,3.09,9612,17640
+119,2017,Sikkim,rice,3.22,10312,18565
+120,2018,Sikkim,rice,3.35,11012,19490
+121,2008,Sikkim,Wheat,1.7,2014,12360
+122,2009,Sikkim,Wheat,1.87,2728,13820
+123,2010,Sikkim,Wheat,2.04,3442,15280
+124,2011,Sikkim,Wheat,2.21,4156,16740
+125,2012,Sikkim,Wheat,2.38,4870,18200
+126,2013,Sikkim,Wheat,2.55,5584,19660
+127,2014,Sikkim,Wheat,2.72,6298,21120
+128,2015,Sikkim,Wheat,2.89,7012,22580
+129,2016,Sikkim,Wheat,3.06,7726,24040
+130,2017,Sikkim,Wheat,3.23,8440,25500
+131,2018,Sikkim,Wheat,3.4,9154,26960
+132,2008,Sikkim,Millets,2.02,1111,17460
+133,2009,Sikkim,Millets,2.24,1765,18634
+134,2010,Sikkim,Millets,2.46,2419,19808
+135,2011,Sikkim,Millets,2.68,3073,20982
+136,2012,Sikkim,Millets,2.9,3727,22156
+137,2013,Sikkim,Millets,3.12,4381,23330
+138,2014,Sikkim,Millets,3.34,5035,24504
+139,2015,Sikkim,Millets,3.56,5689,25678
+140,2016,Sikkim,Millets,3.78,6343,26852
+141,2017,Sikkim,Millets,4,6997,28026
+142,2018,Sikkim,Millets,4.22,7651,29200
+143,2008,Sikkim,Orange,1.24,2640,9540
+144,2009,Sikkim,Orange,1.51,3100,10281
+145,2010,Sikkim,Orange,1.78,3560,11022
+146,2011,Sikkim,Orange,2.05,4020,11763
+147,2012,Sikkim,Orange,2.32,4480,12504
+148,2013,Sikkim,Orange,2.59,4940,13245
+149,2014,Sikkim,Orange,2.86,5400,13986
+150,2015,Sikkim,Orange,3.13,5860,14727
+151,2016,Sikkim,Orange,3.4,6320,15468
+152,2017,Sikkim,Orange,3.67,6780,16209
+153,2018,Sikkim,Orange,3.94,7240,16950
+154,2008,Sikkim,Cardamom,1.05,1745,1542
+155,2009,Sikkim,Cardamom,1.32,3205,2064
+156,2010,Sikkim,Cardamom,1.59,4665,2586
+157,2011,Sikkim,Cardamom,1.86,6125,3108
+158,2012,Sikkim,Cardamom,2.13,7585,3630
+159,2013,Sikkim,Cardamom,2.4,9045,4152
+160,2014,Sikkim,Cardamom,2.67,10505,4674
+161,2015,Sikkim,Cardamom,2.94,11965,5196
+162,2016,Sikkim,Cardamom,3.21,13425,5718
+163,2017,Sikkim,Cardamom,3.48,14885,6240
+164,2018,Sikkim,Cardamom,3.75,16345,6762
+165,2008,Uttarakhand,Rice,1.47,5461,7436
+166,2009,Uttarakhand,Rice,1.6,6967,8670
+167,2010,Uttarakhand,Rice,1.73,8473,9904
+168,2011,Uttarakhand,Rice,1.86,9979,11138
+169,2012,Uttarakhand,Rice,1.99,11485,12372
+170,2013,Uttarakhand,Rice,2.12,12991,13606
+171,2014,Uttarakhand,Rice,2.25,14497,14840
+172,2015,Uttarakhand,Rice,2.38,16003,16074
+173,2016,Uttarakhand,Rice,2.51,17509,17308
+174,2017,Uttarakhand,Rice,2.64,19015,18542
+175,2018,Uttarakhand,Rice,2.77,20521,19776
+176,2008,Uttarakhand,Wheat,1.56,3241,4515
+177,2009,Uttarakhand,Wheat,1.73,3955,5977
+178,2010,Uttarakhand,Wheat,1.9,4669,7439
+179,2011,Uttarakhand,Wheat,2.07,5383,8901
+180,2012,Uttarakhand,Wheat,2.24,6097,10363
+181,2013,Uttarakhand,Wheat,2.41,6811,11825
+182,2014,Uttarakhand,Wheat,2.58,7525,13287
+183,2015,Uttarakhand,Wheat,2.75,8239,14749
+184,2016,Uttarakhand,Wheat,2.92,8953,16211
+185,2017,Uttarakhand,Wheat,3.09,9667,17673
+186,2018,Uttarakhand,Wheat,3.26,10381,19135
+187,2008,Uttarakhand,Millets,1.25,5444,6479
+188,2009,Uttarakhand,Millets,1.47,5584,8439
+189,2010,Uttarakhand,Millets,1.69,5724,10399
+190,2011,Uttarakhand,Millets,1.91,5864,12359
+191,2012,Uttarakhand,Millets,2.13,6004,14319
+192,2013,Uttarakhand,Millets,2.35,6144,16279
+193,2014,Uttarakhand,Millets,2.57,6284,18239
+194,2015,Uttarakhand,Millets,2.79,6424,20199
+195,2016,Uttarakhand,Millets,3.01,6564,22159
+196,2017,Uttarakhand,Millets,3.23,6704,24119
+197,2018,Uttarakhand,Millets,3.45,6844,26079
+198,2008,Uttarakhand,Soyabean,2.04,2015,7454
+199,2009,Uttarakhand,Soyabean,2.31,2475,7919
+200,2010,Uttarakhand,Soyabean,2.58,2935,8384
+201,2011,Uttarakhand,Soyabean,2.85,3395,8849
+202,2012,Uttarakhand,Soyabean,3.12,3855,9314
+203,2013,Uttarakhand,Soyabean,3.39,4315,9779
+204,2014,Uttarakhand,Soyabean,3.66,4775,10244
+205,2015,Uttarakhand,Soyabean,3.93,5235,10709
+206,2016,Uttarakhand,Soyabean,4.2,5695,11174
+207,2017,Uttarakhand,Soyabean,4.47,6155,11639
+208,2018,Uttarakhand,Soyabean,4.74,6615,12104
+209,2008,Uttarakhand,Cotton,1.96,4791,7900
+210,2009,Uttarakhand,Cotton,2.23,6251,9434
+211,2010,Uttarakhand,Cotton,2.5,7711,10968
+212,2011,Uttarakhand,Cotton,2.77,9171,12502
+213,2012,Uttarakhand,Cotton,3.04,10631,14036
+214,2013,Uttarakhand,Cotton,3.31,12091,15570
+215,2014,Uttarakhand,Cotton,3.58,13551,17104
+216,2015,Uttarakhand,Cotton,3.85,15011,18638
+217,2016,Uttarakhand,Cotton,4.12,16471,20172
+218,2017,Uttarakhand,Cotton,4.39,17931,21706
+219,2018,Uttarakhand,Cotton,4.66,19391,23240
+220,2008,Jammu and Kashimir,Rice,1.05,1456,7942
+221,2009,Jammu and Kashimir,Rice,1.18,2156,8867
+222,2010,Jammu and Kashimir,Rice,1.31,2856,9792
+223,2011,Jammu and Kashimir,Rice,1.44,3556,10717
+224,2012,Jammu and Kashimir,Rice,1.57,4256,11642
+225,2013,Jammu and Kashimir,Rice,1.7,4956,12567
+226,2014,Jammu and Kashimir,Rice,1.83,5656,13492
+227,2015,Jammu and Kashimir,Rice,1.96,6356,14417
+228,2016,Jammu and Kashimir,Rice,2.09,7056,15342
+229,2017,Jammu and Kashimir,Rice,2.22,7756,16267
+230,2018,Jammu and Kashimir,Rice,2.35,8456,17192
+231,2008,Jammu and Kashimir,Wheat,1.9,2554,6579
+232,2009,Jammu and Kashimir,Wheat,2.07,3268,8039
+233,2010,Jammu and Kashimir,Wheat,2.24,3982,9499
+234,2011,Jammu and Kashimir,Wheat,2.41,4696,10959
+235,2012,Jammu and Kashimir,Wheat,2.58,5410,12419
+236,2013,Jammu and Kashimir,Wheat,2.75,6124,13879
+237,2014,Jammu and Kashimir,Wheat,2.92,6838,15339
+238,2015,Jammu and Kashimir,Wheat,3.09,7552,16799
+239,2016,Jammu and Kashimir,Wheat,3.26,8266,18259
+240,2017,Jammu and Kashimir,Wheat,3.43,8980,19719
+241,2018,Jammu and Kashimir,Wheat,3.6,9694,21179
+242,2008,Jammu and Kashimir,Millets,2.02,2014,944
+243,2009,Jammu and Kashimir,Millets,2.24,2668,2118
+244,2010,Jammu and Kashimir,Millets,2.46,3322,3292
+245,2011,Jammu and Kashimir,Millets,2.68,3976,4466
+246,2012,Jammu and Kashimir,Millets,2.9,4630,5640
+247,2013,Jammu and Kashimir,Millets,3.12,5284,6814
+248,2014,Jammu and Kashimir,Millets,3.34,5938,7988
+249,2015,Jammu and Kashimir,Millets,3.56,6592,9162
+250,2016,Jammu and Kashimir,Millets,3.78,7246,10336
+251,2017,Jammu and Kashimir,Millets,4,7900,11510
+252,2018,Jammu and Kashimir,Millets,4.22,8554,12684
+253,2008,Jammu and Kashimir,Maize,2.07,999,3475
+254,2009,Jammu and Kashimir,Maize,2.34,1459,4216
+255,2010,Jammu and Kashimir,Maize,2.61,1919,4957
+256,2011,Jammu and Kashimir,Maize,2.88,2379,5698
+257,2012,Jammu and Kashimir,Maize,3.15,2839,6439
+258,2013,Jammu and Kashimir,Maize,3.42,3299,7180
+259,2014,Jammu and Kashimir,Maize,3.69,3759,7921
+260,2015,Jammu and Kashimir,Maize,3.96,4219,8662
+261,2016,Jammu and Kashimir,Maize,4.23,4679,9403
+262,2017,Jammu and Kashimir,Maize,4.5,5139,10144
+263,2018,Jammu and Kashimir,Maize,4.77,5599,10885
+264,2008,Jammu and Kashimir,Cotton,1.44,1422,2554
+265,2009,Jammu and Kashimir,Cotton,1.71,2882,3076
+266,2010,Jammu and Kashimir,Cotton,1.98,4342,3598
+267,2011,Jammu and Kashimir,Cotton,2.25,5802,4120
+268,2012,Jammu and Kashimir,Cotton,2.52,7262,4642
+269,2013,Jammu and Kashimir,Cotton,2.79,8722,5164
+270,2014,Jammu and Kashimir,Cotton,3.06,10182,5686
+271,2015,Jammu and Kashimir,Cotton,3.33,11642,6208
+272,2016,Jammu and Kashimir,Cotton,3.6,13102,6730
+273,2017,Jammu and Kashimir,Cotton,3.87,14562,7252
+274,2018,Jammu and Kashimir,Cotton,4.14,16022,7774
