@@ -1,0 +1,7 @@
+section {
+    /* min-height: 100px; */
+    height: 600px;;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: linear-gradient(rgb(68, 133, 238), rgb(157, 229, 220));
+}

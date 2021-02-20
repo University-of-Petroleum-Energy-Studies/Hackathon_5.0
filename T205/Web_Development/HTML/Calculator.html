@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../CSS/Calculator.css">
+<script src="../JS/Calculator.js"></script>
+<html>
+    <head>
+    <title> The Farming Calculator </title>
+    </head>
+<body>
+    <h1>Enter the length of side of your farm:</h1><br>
+    <h2>Rectangular Field</h2>
+    <input type="number" id="number_1" class="ibox">Length</input><br><br>
+    <input type="number" id="number_2" class="ibox">Width</input><br><br>
+    <button id="btn1" onclick="calculate()">Calculate</button><br>
+    <h2>Circlular Field</h2>
+    <input type="number" id="radius" class="ibox">Radius</input><br><br>
+    <button id="btn2" onclick="calculate()">Calculate</button><br>
+    <h2>Area of your farm:
+    <div id="lblarea">0</div>
+    <h2>Perimeter of your farm:
+    <div id="lblperimeter">0</div>
+    <img src="../Data/Calc_Farm.jpg" width="50%"/>
+</body>
+</html>
