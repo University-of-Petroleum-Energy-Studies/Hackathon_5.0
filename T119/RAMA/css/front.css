@@ -1,0 +1,179 @@
+ body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: rgb(47, 120, 255); /* blue */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 105px;
+      overflow-y: hidden; 
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      letter-spacing: 5px;
+      background:#2f78ff;
+      
+  }
+  
+  .navbar-nav  li a {
+    color:whitesmoke !important;
+
+}     
+
+  .navbar-nav  li a:hover {
+      color: purple !important;
+  }
+
+  #mockupPhone {
+    display: block;
+    max-width:450px;
+    max-height:550px;
+    width: auto;
+    height: 450px;
+    clear: both;
+    float: left;
+  }
+
+  #mockupText h4{
+      font-family: inherit;
+      font-size: 1em;
+      line-height: 29px;
+  }
+
+  #mockupText h1{
+    font-family: inherit;
+    font-size: 1.9em;
+}
+
+  .fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+#mockupbutton {
+    border-radius: 30px;
+    border-color: #ffffff;
+    border-width: 2px;
+    font-weight: 400;
+    background-color: transparent;
+    color:#ffffff;
+    opacity: 1;
+    margin-top: 20px;
+    width:150px;
+    height: 45px;
+    font-size: 20px;
+    transition: all 150ms linear;
+}
+
+#mockupbutton:hover {
+ background-color: white;
+ color: black;
+
+}
+
+#sub-modal-button {
+    border-radius: 30px;
+    border-color: rgb(47, 120, 255);
+    border-width: 2px;
+    font-weight: 200;
+    background-color: rgb(47, 120, 255);
+    color:#ffffff;
+    opacity: 1;
+
+    width:95px;
+    height: 35px;
+    font-size: 16px;
+    float:right;
+    transition: all 150ms linear;
+}
+
+#sub-modal-button:hover {
+ background-color:rgb(6, 75, 204);
+ border-color: rgb(6, 75, 204);
+ color: white;
+ padding-top: -5px;
+
+}
+
+#bot-image{
+    width:150px;
+    height: 150px;
+
+}
+
+.prettyline {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  }
+  
+  /* Color line credit to ninjamonk: [[http://bootsnipp.com/snippets/featured/mix-amp-match-login]]*/
+  
+  input#rememberme-0 {
+      margin-left: 2px !important;
+  }
+  
+  .blue-gradient{
+  background-color: #2f78ff;
+  
+  }
+  
+  .modal-content {
+      width: 350px;
+  }
+  
+  .modal-header{
+          padding: 30px;
+      border-bottom: 1px solid #e5e5e5;
+     
+      margin-top:-37px;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+
+  }
+  
+  .form-control{
+      border:none;
+      border-bottom: solid;
+      border-bottom-width: 2px;
+      border-bottom-color: gray;
+  }
+  .control-label{
+      color: rgb(47, 120, 255);
+      font-size: 12px;  
+     
+      
+  }
+
+  .h1, .h2, .h3, h1, h2, h3{
+      margin-top: 8px;
+  }
+
