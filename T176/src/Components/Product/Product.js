@@ -1,11 +1,10 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from '../../StateProvider';
-import FlipMove from 'react-flip-move';
 
 const Product = ({ id, title, image, price, rating }) => {
 
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
 
     const addToBasket = () => {
         dispatch({
@@ -16,6 +15,7 @@ const Product = ({ id, title, image, price, rating }) => {
                 image: image,
                 price: price,
                 rating: rating,
+                user: user?.email
             }
         })
     }

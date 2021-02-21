@@ -38,6 +38,7 @@
 
 .sell__price {
     display: flex;
+    flex-direction: column;
     padding: 20px;
 }
 
@@ -69,4 +70,21 @@
 
 .sell__selectCropP {
     padding-right: 10px;
+}
+
+body {
+    background-color: #adeecf;
+}
+
+.sell__priceFields {
+    display: flex;
+}
+
+.sell__validate {
+    text-align: center;
+}
+
+.sell__contact {
+    display: flex;
+    padding: 20px;
 }

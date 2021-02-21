@@ -46,14 +46,14 @@ const Buy = () => {
                     <Product
                         id="3"
                         title="John Deere 5310 4WD"
-                        price={1000000}
+                        price={100000}
                         image="https://www.tractorjunction.com/assets/images/upload/john-deere-5310-4wd-985351.png"
                         rating={5}
                     />
                     <Product
                         id="4"
                         title="Kartar 4000"
-                        price={2470000}
+                        price={247000}
                         image="https://www.tractorjunction.com/assets/images/images/implementTractor/40009999.jpg"
                         rating={5}
                     />
