@@ -5,3 +5,11 @@ header {
     background-repeat: no-repeat, repeat;
     background-position: center;
 }
+
+header h1
+{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 100px;
+    color: aliceblue;
+}
