@@ -10,7 +10,6 @@ import 'package:covid19/models/statistics/country_statistics_day_model.dart';
 import 'package:covid19/utils/device/device_utils.dart';
 import 'package:covid19/widgets/sized_box_width_widget.dart';
 
-
 class InfoGraphWidget extends StatefulWidget {
   final List<CountryStatistics> countryStatisticsConfirmedList;
   final List<CountryStatistics> countryStatisticsRecoveredList;
@@ -40,7 +39,6 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
     super.dispose();
   }
 
-  // Toggle the selection between Daily and Monthly Items
   void toggleSelection(int itemIndex) {
     switch (itemIndex) {
       case 0:
@@ -93,14 +91,10 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
     final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
 
-    // Adding the Respective Charts to the list of page [_pages]
-    // 1. Bar Chart for daily data
-    // 2. Area (Line) Chart for weekly data
-    // 3. Dual Bar Chart for daily growth data
+
     final List<Widget> _pages = <Widget>[
       Container(
-        // Checking if the list has any elemnts i.e the API provided
-        // data for the queried country
+
         child: (widget.countryStatisticsConfirmedList.isNotEmpty)
             ? Padding(
                 padding: const EdgeInsets.fromLTRB(
@@ -133,11 +127,8 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
               ),
       ),
       Container(
-        // Checking if the list has any elemnts i.e the API provided
-        // data for the queried country
         child: (widget.countryStatisticsConfirmedList.isNotEmpty)
             ?
-            // Using the latest 15 days days for the Weekly Information
             Padding(
                 padding: const EdgeInsets.only(
                   left: Dimens.horizontalPadding,
@@ -167,8 +158,6 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
               ),
       ),
       Container(
-        // Checking if the list has any elemnts i.e the API provided
-        // data for the queried country
         child: (widget.countryStatisticsConfirmedList.isNotEmpty)
             ? Padding(
                 padding: const EdgeInsets.fromLTRB(
@@ -206,10 +195,8 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
       ),
     ];
 
-    // Houses the the Tabs and the Graphs
     return Column(
       children: <Widget>[
-        // Container is used for the grey underline under the tabs
         Container(
           margin: const EdgeInsets.only(
             right: Dimens.horizontalPadding,
@@ -223,12 +210,9 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
             ),
           ),
 
-          // Tab Items
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              // Tab 1
-              // Gesture Detector used to avoid the Ripple Effect caused in InkWell
               GestureDetector(
                 onTap: () {
                   setState(
@@ -263,11 +247,8 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
                 ),
               ),
 
-              // Horizontal Spacing
               SizedBoxWidthWidget(screenWidth / 45),
 
-              // Tab 2
-              // Gesture Detector used to avoid the Ripple Effect caused in InkWell
               GestureDetector(
                 onTap: () {
                   setState(
@@ -305,8 +286,6 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
               // Horizontal Spacing
               SizedBoxWidthWidget(screenWidth / 45),
 
-              // Tab 3
-              // Gesture Detector used to avoid the Ripple Effect caused in InkWell
               GestureDetector(
                 onTap: () {
                   setState(
@@ -344,7 +323,6 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
           ),
         ),
 
-        // Non-Scrollable PageView builder used to display the Statistics Charts
         Container(
           width: screenWidth,
           height: screenHeight / 3.5,
@@ -365,7 +343,6 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
   }
 }
 
-// Bar Chart Visualisation for the Daily Data
 class DailyBarChartData extends StatelessWidget {
   final List<CountryStatistics> countryStatisticsConfirmedList;
   final double screenWidth;
@@ -380,26 +357,18 @@ class DailyBarChartData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const int countryStatisticsConfirmedListLength = 7;
-    // Empty [BarChartGroupData] List. Intialised with [] to avoid error when trying to
-    // add items using the .add method
     final List<BarChartGroupData> barChartData = [];
 
-    // Calculating the max value in the array to be passed onto the normalization function
-    // [normalizedValue]
     final dailyStatisticsMax =
         countryStatisticsConfirmedList[countryStatisticsConfirmedListLength - 1]
             .cases
             .toDouble();
 
-    // Calculating the min value in the array to be passed onto the normalization function
-    // [normalizedValue]
     final dailyStatisticsMin =
         countryStatisticsConfirmedList[countryStatisticsConfirmedListLength - 7]
             .cases
             .toDouble();
 
-    // Creating a buffer value to display the the top-most title on the left side bar
-    // for the [BarChartData]
     final leftTitleTopBuffer = countryStatisticsConfirmedList[
                 countryStatisticsConfirmedListLength - 1]
             .cases
@@ -408,8 +377,6 @@ class DailyBarChartData extends StatelessWidget {
                 .cases /
             10;
 
-    // Looping through the list to add each individual item with the normalized values
-    // to the [BarChartGroupData] which is used to plot the points on the graph
     countryStatisticsConfirmedList.asMap().forEach(
       (index, item) {
         barChartData.add(
@@ -427,10 +394,7 @@ class DailyBarChartData extends StatelessWidget {
                 width: screenWidth / 20,
                 backDrawRodData: BackgroundBarChartRodData(
                   show: true,
-                  // Setting the max value of the Bar Chart (Y Axis) with a buffer
-                  // so that the graph is not painted outside the container
                   y: 11,
-                  // Background colour of the Bar Chart - Lighter Version than the filled lines
                   color: AppColors.confirmedColor.withOpacity(0.3),
                 ),
               ),
@@ -444,18 +408,12 @@ class DailyBarChartData extends StatelessWidget {
         groupsSpace: screenWidth / 14,
         alignment: BarChartAlignment.center,
 
-        // Define the properties for the Bar Chart when touched over a plot
         barTouchData: BarTouchData(
-          // Defining the properties of the ToolTip which occurs when touched/hovered over a plotted item
-          // [fitInsideHorizontally] and [fitInsideVertically] are set to true to fit the tooltip in the
-          // view of the Widget
           touchTooltipData: BarTouchTooltipData(
             fitInsideHorizontally: true,
             fitInsideVertically: true,
             tooltipBgColor: Colors.blueAccent,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
-              // Iterating through the 7 items with the index of the [countryStatisticsConfirmedListLength]
-              // to obtain the weekday of the particular day for the [BarTooltipItem]
               String weekDay;
               switch (group.x.toInt()) {
                 case 0:
@@ -518,10 +476,8 @@ class DailyBarChartData extends StatelessWidget {
           ),
         ),
 
-        // Side and Bottom Tiles
         titlesData: FlTitlesData(
           show: true,
-          // Side Titles
           leftTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
@@ -542,7 +498,6 @@ class DailyBarChartData extends StatelessWidget {
             },
           ),
 
-          // Bottom Titles
           bottomTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
@@ -551,8 +506,6 @@ class DailyBarChartData extends StatelessWidget {
             reservedSize: screenWidth / 20,
             margin: screenHeight / 175,
             getTitles: (double value) {
-              // Iterating through the 7 items with the index of the [countryStatisticsConfirmedListLength]
-              // to obtain the Month
               switch (value.toInt()) {
                 case 0:
                   return dailyMonthData(
@@ -603,7 +556,6 @@ class DailyBarChartData extends StatelessWidget {
           ),
         ),
 
-        // Hiding the Box plotted around the Bar Chart
         borderData: FlBorderData(
           show: false,
         ),
@@ -613,7 +565,6 @@ class DailyBarChartData extends StatelessWidget {
   }
 }
 
-// Smooth Area Graph Visualisation for Weekly Data
 class WeeklyAreaGraphData extends StatelessWidget {
   final List<CountryStatistics> countryStatisticsConfirmedList;
   final double screenWidth;
@@ -632,26 +583,18 @@ class WeeklyAreaGraphData extends StatelessWidget {
       AppColors.confirmedColor,
       AppColors.confirmedColor.withOpacity(0.3),
     ];
-    // Empty [FlSpot] List. Intialised with [] to avoid error when trying to
-    // add items using the .add method
     final List<FlSpot> flSpotData = [];
 
-    // Calculating the max value in the array to be passed onto the normalization function
-    // [normalizedValue]
     final weeklyStatisticsMax =
         countryStatisticsConfirmedList[countryStatisticsConfirmedListLength - 1]
             .cases
             .toDouble();
 
-    // Calculating the min value in the array to be passed onto the normalization function
-    // [normalizedValue]
     final weeklyStatisticsMin = countryStatisticsConfirmedList[
             countryStatisticsConfirmedListLength - 15]
         .cases
         .toDouble();
 
-    // Creating a buffer value to display the the top-most title on the left side bar
-    // for the [LineChartData]
     final leftTitleTopBuffer = countryStatisticsConfirmedList[
                 countryStatisticsConfirmedListLength - 1]
             .cases
@@ -741,7 +684,9 @@ class WeeklyAreaGraphData extends StatelessWidget {
         minX: 0,
         maxX: 14,
 
-
+        // Setting the range of values on y-axis between -5 to 13 to create a buffer between
+        // the minimum and maximum value.
+        // The actual number of entries are 10 which are plotted between [0...10]
         minY: -5,
         maxY: 13,
 
@@ -751,6 +696,7 @@ class WeeklyAreaGraphData extends StatelessWidget {
               (LineChartBarData barData, List<int> spotIndexes) {
             return spotIndexes.map(
               (spotIndex) {
+                // Adding the dot and the line (on click of the dot) with relevant styling
                 return TouchedSpotIndicatorData(
                   FlLine(
                     color: AppColors.confirmedColor.withOpacity(0.5),
@@ -764,12 +710,17 @@ class WeeklyAreaGraphData extends StatelessWidget {
             ).toList();
           },
 
+          // Defining the properties of the ToolTip which occurs when touched/hovered over a plotted item
+          // [fitInsideHorizontally] and [fitInsideVertically] are set to true to fit the tooltip in the
+          // view of the Widget
           touchTooltipData: LineTouchTooltipData(
             fitInsideHorizontally: true,
             fitInsideVertically: true,
             tooltipBgColor: Colors.blueAccent,
             tooltipRoundedRadius: screenWidth / 50,
             getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
+              // Iterating through [touchBarSpots] to create the [LineToolTipItem] to display
+              // date, case count and `Confirmed` static String
               return touchedBarSpots.map((barSpot) {
                 final flSpot = barSpot;
                 return LineTooltipItem(
@@ -783,6 +734,8 @@ class WeeklyAreaGraphData extends StatelessWidget {
           ),
         ),
 
+        // Setting the properties for the Line Graph
+        // Setting the [belowBarData] property to display a gradient below the plotted Line Graph
         lineBarsData: [
           LineChartBarData(
             spots: flSpotData,
@@ -857,29 +810,41 @@ class DailyChangeBarChartData extends StatelessWidget {
     }
 
     const int countryStatisticsListLength = 8;
+    // Empty [BarChartGroupData] List. Intialised with [] to avoid error when trying to
+    // add items using the .add method
     final List<BarChartGroupData> barChartData = [];
 
     final List<int> confirmedList = [];
     final List<int> recoveredList = [];
 
+    // Calcuating the daily change in confirmed cases
     for (int index = 0; index < countryStatisticsListLength - 1; index++) {
       confirmedList.add(countryStatisticsConfirmedList[index + 1].cases -
           countryStatisticsConfirmedList[index].cases);
     }
 
+    // Calcuating the daily change in recovered cases
     for (int index = 0; index < countryStatisticsListLength - 1; index++) {
       recoveredList.add(countryStatisticsRecoveredList[index + 1].cases -
           countryStatisticsRecoveredList[index].cases);
     }
 
+    // Calculating the max value (Between the [confirmedList] and [recoveredList]) in the array to be passed onto the normalization function
+    // [normalizedValue]
     final dailyChangeMax = math.max(
         confirmedList.reduce(math.max), recoveredList.reduce(math.max));
 
+    // Calculating the min value (Between the [confirmedList] and [recoveredList]) in the array to be passed onto the normalization function
+    // [normalizedValue]
     final dailyChangeMin = math.min(
         confirmedList.reduce(math.min), recoveredList.reduce(math.min));
 
+    // Creating a buffer value to display the the top-most title on the left side bar
+    // for the [BarChartData]
     final leftTitleTopBuffer = dailyChangeMax + dailyChangeMax / 5;
 
+    // Looping through the list to add each individual item with the normalized values
+    // to the [BarChartGroupData] which is used to plot the points on the graph
     for (int index = 0; index < countryStatisticsListLength - 1; index++) {
       barChartData.add(
         makeGroupData(
@@ -911,13 +876,16 @@ class DailyChangeBarChartData extends StatelessWidget {
 
         // Define the properties for the Bar Chart when touched over a plot
         barTouchData: BarTouchData(
-
+          // Defining the properties of the ToolTip which occurs when touched/hovered over a plotted item
+          // [fitInsideHorizontally] and [fitInsideVertically] are set to true to fit the tooltip in the
+          // view of the Widget
           touchTooltipData: BarTouchTooltipData(
             fitInsideHorizontally: true,
             fitInsideVertically: true,
             tooltipBgColor: Colors.blueAccent,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
-
+              // Iterating through the 7 items with the index of the [countryStatisticsConfirmedListLength]
+              // to obtain the weekday of the particular day for the [BarTooltipItem]
               String weekDay;
               switch (group.x.toInt()) {
                 case 0:
@@ -970,6 +938,7 @@ class DailyChangeBarChartData extends StatelessWidget {
                   );
                   break;
               }
+              // Showing the confirmed cases if the first [BarChartRodData] of the [BarChartGroupData]
               if (rodIndex == 0) {
                 return BarTooltipItem(
                   '$weekDay \n ${confirmedList[group.x]} \n Confirmed',
@@ -979,6 +948,7 @@ class DailyChangeBarChartData extends StatelessWidget {
                 );
               }
 
+              // Showing the confirmed cases if the second [BarChartRodData] of the [BarChartGroupData]
               else {
                 return BarTooltipItem(
                   '$weekDay \n ${recoveredList[group.x]} \n Recovered',
@@ -1022,6 +992,8 @@ class DailyChangeBarChartData extends StatelessWidget {
             reservedSize: screenWidth / 20,
             margin: screenHeight / 175,
             getTitles: (double value) {
+              // Iterating through the 7 items with the index of the [countryStatisticsListLength]
+              // to obtain the Month
               switch (value.toInt()) {
                 case 0:
                   return dailyMonthData(
@@ -1111,6 +1083,7 @@ double normalizedValue({
       (((oldValue - oldMin) * (newMax - newMin)) / (oldMax - oldMin)) + newMin;
   return double.parse(newValue.toStringAsExponential(3));
 }
+
 
 String getUnitValue(double count) {
   // https://stackoverflow.com/questions/9769554/how-to-convert-number-into-k-thousands-m-million-and-b-billion-suffix-in-jsp

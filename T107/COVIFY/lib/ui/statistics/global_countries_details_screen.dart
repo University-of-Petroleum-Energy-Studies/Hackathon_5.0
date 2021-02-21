@@ -9,6 +9,7 @@ import 'package:covid19/constants/text_styles.dart';
 import 'package:covid19/utils/custom_scroll_behaviour.dart';
 import 'package:covid19/utils/device/device_utils.dart';
 
+/// [GlobalCountriesDetails] Displays the list of stats of various contries
 class GlobalCountriesDetails extends StatelessWidget {
   final List<HomeCountries> globalCountriesList;
 
@@ -48,7 +49,6 @@ class GlobalCountriesDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Back Icon
                     GestureDetector(
                       onTap: () => Navigator.of(context).pop(),
                       child: Icon(
@@ -58,10 +58,8 @@ class GlobalCountriesDetails extends StatelessWidget {
                       ),
                     ),
 
-                    // Vertical Spacing
                     SizedBoxHeightWidget(screenHeight / 50),
 
-                    // Global Title
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
@@ -85,10 +83,8 @@ class GlobalCountriesDetails extends StatelessWidget {
                       ],
                     ),
 
-                    // Vertical Spacing
                     SizedBoxHeightWidget(screenHeight / 50),
 
-                    // Global Cases List Header label
                     Row(
                       children: [
                         Expanded(
@@ -194,7 +190,6 @@ class GlobalCountriesDetails extends StatelessWidget {
                               countryItemNewDeaths =
                                   globalCountriesList[index].newDeaths;
 
-                              // Item that display the Country Item
                               return Container(
                                 margin: EdgeInsets.symmetric(
                                   vertical: screenHeight / 150,
@@ -204,7 +199,6 @@ class GlobalCountriesDetails extends StatelessWidget {
                                   vertical: screenHeight / 100,
                                 ),
 
-                                // Adding alternate colours to the List
                                 decoration: BoxDecoration(
                                   color: index % 2 == 0
                                       ? AppColors.activeColor.withOpacity(0.1)
@@ -217,7 +211,6 @@ class GlobalCountriesDetails extends StatelessWidget {
                                 ),
                                 child: Row(
                                   children: [
-                                    // Country Label
                                     Expanded(
                                       flex: 1,
                                       child: Text(
@@ -229,7 +222,6 @@ class GlobalCountriesDetails extends StatelessWidget {
                                       ),
                                     ),
 
-                                    // Country Cases (New and Total)
                                     Expanded(
                                       flex: 4,
                                       child: Column(

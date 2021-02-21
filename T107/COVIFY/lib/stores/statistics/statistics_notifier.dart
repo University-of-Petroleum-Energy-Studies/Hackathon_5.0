@@ -8,13 +8,9 @@ import 'package:covid19/data/network/exceptions/network_exceptions.dart';
 import 'package:covid19/models/statistics/statistics_response_model.dart';
 import 'package:covid19/models/statistics/country_statistics_day_model.dart';
 
-/// States of the [StatisticsScreen]
 enum StatisticsState { loading, hasData, hasError, hasNetworkError, unInit }
 
-/// DataModel for the [StatisticsScreen]
-/// Contains the data for the 2 areas in the screen
-/// 1. Country Summary information
-/// 2. Country Statistics
+
 class StatisticseData {
   final StatisticsResponseModel statisticsInformationData;
   final List<CountryStatistics> countryStatisticsConfirmedList;
@@ -28,12 +24,7 @@ class StatisticseData {
   });
 }
 
-/// [StatisticsChangeNotifier] for the (lib/ui/statistics/statistics_screen.dart) [StatisticsScreen]
-/// Handles the states of the [StatisticsScreen].
-///
-/// 1. [state] represents the current state of the [StatisticsScreen]
-/// 2. [error] represents any error that may have occurred during the API call
-/// 3. [fetchData] is used to make API calls from the [userRepository]
+
 class StatisticsChangeNotifier with ChangeNotifier {
   final BaseRepository userRepository;
   StatisticsState state = StatisticsState.unInit;
@@ -111,14 +102,12 @@ class StatisticsChangeNotifier with ChangeNotifier {
       error = Strings.noInternetErrorTitle;
     }
 
-    /// Catching any Generic Errors and settng the appropriate state
     catch (e) {
       debugPrint(' Error in Home Notifier :- $e');
       state = StatisticsState.hasError;
       error = Strings.genericErrorTitle;
     }
 
-    /// Signalling the change of any/all objects
      finally {
       notifyListeners();
     }

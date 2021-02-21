@@ -38,6 +38,8 @@ class Strings {
 
   static const newsTitle = 'COVID News';
 
+  static const notesTitle = 'Notes';
+
   static const waterTitle = 'Drink Water Reminder';
 
   static const covidInformationTitle = 'What is COVID-19 ?';

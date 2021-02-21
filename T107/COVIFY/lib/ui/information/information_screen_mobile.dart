@@ -11,28 +11,39 @@ import 'package:covid19/utils/custom_scroll_behaviour.dart';
 import 'package:covid19/utils/device/device_utils.dart';
 import 'package:covid19/widgets/custom_alert_dialog.dart';
 
-
+/// [InformationMobileScreen] Displays the information in regards to Coronavirus
+/// and reference to where the data is taken from
+/// Supports Mobile Screen Sizes
 class InformationMobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return Scaffold(
+      // To make sure that the top of the body is aligned with top
+      // of the AppBar and we do not have any unwanted background colors
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(
           screenHeight / 20,
         ),
         child: AppBar(
+          // Leading set to empty container to remove the back button
           leading: Container(),
+          // Setting the background color to transparent so that the
+          // image can be full screen without any froeground colors
           backgroundColor: AppColors.transparentColor,
           elevation: 0,
           actions: <Widget>[
+            // Adding padding to the action info button so it doesn't stick
+            // to the side of the screen
             Padding(
               padding: EdgeInsets.only(
                 right: screenWidth / 50,
               ),
               child: GestureDetector(
+                // Displaying the dialog to reference the source of the
+                // image
                 onTap: () => showDialog(
                   context: context,
                   builder: (BuildContext context) {
@@ -40,6 +51,7 @@ class InformationMobileScreen extends StatelessWidget {
                       title: RichText(
                         softWrap: true,
                         text: TextSpan(children: <TextSpan>[
+                          // Dialog Title - Data Source
                           TextSpan(
                             text: '${Strings.dataSource}\n\n',
                             style: TextStyles.hightlightText.copyWith(
@@ -47,6 +59,8 @@ class InformationMobileScreen extends StatelessWidget {
                             ),
                           ),
 
+                          // Dialog description referncing and linking the blog post
+                          // and the Author
                           TextSpan(
                             style: TextStyles.statisticsSubHeadingTextStlye
                                 .copyWith(
@@ -62,6 +76,8 @@ class InformationMobileScreen extends StatelessWidget {
                                   decoration: TextDecoration.underline,
                                   color: AppColors.accentBlueColor,
                                 ),
+                                // Launching the URL of the blog post
+                                // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async => await canLaunch(Endpoints
                                           .informationDataSourceReferenceURL)
@@ -72,6 +88,8 @@ class InformationMobileScreen extends StatelessWidget {
                               const TextSpan(
                                 text: Strings.wby,
                               ),
+                              // Launching the URL of the Author's Website
+                              // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
                               TextSpan(
                                 text: Strings.authorInformationGraphic,
                                 style: const TextStyle(
@@ -90,6 +108,7 @@ class InformationMobileScreen extends StatelessWidget {
                         ]),
                       ),
 
+                      // Defining the Action item [Close] for the Dialog
                       actions: <Widget>[
                         GestureDetector(
                           onTap: () => Navigator.of(context).pop(),
@@ -137,9 +156,11 @@ class InformationMobileScreen extends StatelessWidget {
         ),
       ),
 
+      // Information image for COVID-19
       body: ScrollConfiguration(
         behavior: const CustomScrollBehaviour(),
         child: SingleChildScrollView(
+          // Padding been added to keep the VISME logo visible at the bottom
           child: Container(
             padding: const EdgeInsets.only(
               bottom: Dimens.verticalPadding / 0.15,
@@ -152,6 +173,8 @@ class InformationMobileScreen extends StatelessWidget {
           ),
         ),
       ),
+      // Back button to lead back to the [HomeScreen]
+      // Floating Action Button used so that the item remains fixed when the image is scolled
       floatingActionButton: Padding(
         padding: EdgeInsets.only(
           bottom: screenHeight / 75,

@@ -25,7 +25,12 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
   @override
   void initState()  {
     super.initState();
+    AlanVoice.addButton("9f1607846aab2f8355f03f7f9b5bd7282e956eca572e1d8b807a3e2338fdd0dc/stage");
+
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -220,7 +225,6 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
 
                 Row(
                   children: const <Widget>[
-                    // Myth Busters Card
                     Expanded(
                       flex: 1,
                       child: HomeCardWidget(
@@ -232,6 +236,47 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                       ),
                     ),
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: Strings.mythBusterTitle,
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/myth-busters.png',
+                        route: Routes.mythBusters,
+                      ),
+                    ),
+
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: Strings.faqTitle,
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/faq-data.png',
+                        route: Routes.faq,
+                      ),
+                    ),
+
+
+                  ],
+                ),
+
+                SizedBoxHeightWidget(screenHeight / 125),
+
+                Row(
+                  children: const <Widget>[
+                    // Myth Busters Card
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Live Heat Map',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/map.png',
+                        route: Routes.map,
+                      ),
+                    ),
 
                     Expanded(
                       flex: 1,
@@ -245,16 +290,59 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                     ),
 
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'News',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/news.png',
+                        route: Routes.news,
+                      ),
+                    )
 
                   ],
                 ),
 
                 SizedBoxHeightWidget(screenHeight / 125),
 
+                Row(
+                  children: const <Widget>[
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Travel Guidelines',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/travel.png',
+                        route: Routes.travel,
+                      ),
+                    ),
 
-                SizedBoxHeightWidget(screenHeight / 125),
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Notes',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/notes.png',
+                        route: Routes.notes,
+                      ),
+                    ),
 
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Drink Water Reminder',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/water.png',
+                        route: Routes.water,
+                      ),
+                    )
+                  ],
+                ),
 
               ],
             ),

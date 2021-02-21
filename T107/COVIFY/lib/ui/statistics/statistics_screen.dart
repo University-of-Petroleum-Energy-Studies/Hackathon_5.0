@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:alan_voice/alan_voice.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -39,6 +40,7 @@ class StatisticsScreen extends StatefulWidget {
 }
 
 class _StatisticsScreenState extends State<StatisticsScreen> {
+
   bool isOffline = false;
 
   List<Countries> countriesList;
@@ -59,13 +61,6 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   @override
   void initState() {
     super.initState();
-
-    // Setting the value of [selectedCountry] and [selectedCountryISO2] which
-    // used to display the current selected country and to fetch the flag flat icon
-    // of the Country respectively
-    //
-    // Using [Futre.delayed] act as an additional secutiry layer to perform the requested
-    // tasks before the UI is painted
     Future.delayed(
       const Duration(milliseconds: 10),
       () {
@@ -97,7 +92,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
         );
       },
     );
+
   }
+
 
   @override
   void dispose() {

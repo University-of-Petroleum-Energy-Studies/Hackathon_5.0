@@ -33,7 +33,6 @@ class InformationDesktopScreen extends StatelessWidget {
                 right: screenWidth / 250,
               ),
               child: GestureDetector(
-                // image
                 onTap: () => showDialog(
                   context: context,
                   builder: (BuildContext context) {
@@ -68,6 +67,8 @@ class InformationDesktopScreen extends StatelessWidget {
                                 const TextSpan(
                                   text: Strings.wby,
                                 ),
+                                // Launching the URL of the Author's Website
+                                // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
                                 TextSpan(
                                   text: Strings.authorInformationGraphic,
                                   style: const TextStyle(
@@ -143,9 +144,11 @@ class InformationDesktopScreen extends StatelessWidget {
         ),
       ),
 
+      // Information image for COVID-19
       body: ScrollConfiguration(
         behavior: const CustomScrollBehaviour(),
         child: SingleChildScrollView(
+          // Padding been added to keep the VISME logo visible at the bottom
           child: Container(
             padding: const EdgeInsets.only(
               bottom: Dimens.verticalPadding / 0.15,

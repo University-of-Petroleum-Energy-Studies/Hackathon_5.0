@@ -32,9 +32,8 @@ dependencies:
   custom_splash: ^0.0.2
   # Package to leverage Firebase Analytics
   firebase: ^7.3.0
-  # Package to check responsiveness
-  # device_preview: ^0.4.4
-  # Package to support responsiveness
+  expansion_tile_card: ^1.1.0
+  carousel_slider: ^3.0.0
   responsive_builder: ^0.1.7
   webview_flutter: ^1.0.5
   # Package to launch OS specific URLs
