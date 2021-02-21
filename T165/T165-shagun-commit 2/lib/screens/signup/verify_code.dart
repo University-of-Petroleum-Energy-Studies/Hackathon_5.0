@@ -134,14 +134,6 @@ class _VerifyCodeState extends State<VerifyCode> {
                     )
                   ],
                 ),
-                labelStyle: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black.withOpacity(0.5),
-                    fontWeight: FontWeight.w700),
-                hintStyle: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black.withOpacity(0.5),
-                    fontWeight: FontWeight.w700),
               ),
             ),
           ),

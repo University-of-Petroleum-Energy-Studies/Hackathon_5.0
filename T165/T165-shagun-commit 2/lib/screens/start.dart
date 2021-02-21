@@ -48,15 +48,20 @@ class _StartState extends State<Start> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Expanded(
-              child: Container(),
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 30),
+                child: Center(
+                  child: Image.asset('assets/logo.jpg'),
+                ),
+              ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 5),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,48 +81,73 @@ class _StartState extends State<Start> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Card(
-                  shadowColor: Colors.grey,
-                  elevation: 10,
-                  child: Container(
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: Colors.black, width: 2),
+                  left: BorderSide(color: Colors.black, width: 2),
+                  right: BorderSide(color: Colors.black, width: 2),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
                     height: 60,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Expanded(
-                          flex: 7,
+                          flex: 1,
+                          child: Container(),
+                        ),
+                        Expanded(
+                          flex: 8,
                           child: Container(
-                            padding: EdgeInsets.only(left: 5),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                    color: Color(0xffFFF34E), width: 4),
+                              ),
+                            ),
                             child: InternationalPhoneInput(
                               dropdownIcon: Row(
-                                children: <Widget>[
-                                  Icon(Icons.arrow_drop_down),
-                                  VerticalDivider(
+                                children: [
+                                  Icon(
+                                    Icons.keyboard_arrow_down,
                                     color: Colors.black,
-                                    width: 2,
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    width: 15,
                                   )
                                 ],
                               ),
                               decoration: InputDecoration.collapsed(
-                                  hintText: AppLocalizations.of(context)
-                                      .translate('enter_number'),
-                                  hintStyle: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w700)),
+                                hintStyle: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black.withOpacity(0.5),
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 3,
+                                ),
+                                hintText: "55555 55555",
+                              ),
+                              labelStyle: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black.withOpacity(0.5),
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 3,
+                              ),
+                              showCountryFlags: false,
                               initialPhoneNumber: phoneNumber,
                               onPhoneNumberChange: (_number,
                                   _internationalizedPhoneNumber, _isoCode) {
-                                print(
-                                    "internationalizedPhoneNumber $internationalizedPhoneNumber");
-
                                 phoneNumber = _number;
 
                                 internationalizedPhoneNumber =
@@ -129,22 +159,39 @@ class _StartState extends State<Start> {
                           ),
                         ),
                         Expanded(
-                          flex: 2,
-                          child: GestureDetector(
-                            onTap: () {
-                              sendOTP();
-                            },
-                            child: Icon(
-                              Icons.arrow_forward,
-                              size: 40,
-                            ),
-                          ),
+                          flex: 1,
+                          child: Container(),
                         ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: 30,
+                  ),
+                  GestureDetector(
+                    onTap: sendOTP,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xffFFF34E),
+                      ),
+                      margin: EdgeInsets.only(right: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                      child: Text(
+                        "Lets' go",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

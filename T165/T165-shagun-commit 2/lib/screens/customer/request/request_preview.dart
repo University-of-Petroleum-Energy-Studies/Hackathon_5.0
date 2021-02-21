@@ -48,22 +48,24 @@ class _RequestPreviewViewState extends State<RequestPreviewView> {
                   ),
                   Text(
                     'YOUR REQUEST HAS BEEN POSTED.',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white),
                   ),
                   SizedBox(
                     height: 30,
                   ),
                   Container(
-                    decoration: BoxDecoration(shape: BoxShape.rectangle, // BoxShape.circle or BoxShape.retangle
-                        //color: const Color(0xFF66BB6A),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 8.0,
-                          ),
-                        ]),
+                    decoration:
+                        BoxDecoration(shape: BoxShape.rectangle, boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 8.0,
+                      ),
+                    ]),
                     child: RequestCard(
-                      widget.request,
+                      widget?.request,
                       0,
                       priorityButtonFillColor: Colors.white,
                     ),
@@ -91,11 +93,13 @@ class _RequestPreviewViewState extends State<RequestPreviewView> {
                       ),
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.popAndPushNamed(context, RequestHomeView.routeName);
+                          Navigator.popAndPushNamed(
+                              context, RequestHomeView.routeName);
                         },
                         child: Text(
                           'SEE REQUEST STATUS',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
                     )
@@ -103,7 +107,9 @@ class _RequestPreviewViewState extends State<RequestPreviewView> {
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(20), topLeft: Radius.circular(20)),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20)),
                 ),
               )
             ],

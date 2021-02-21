@@ -95,7 +95,10 @@ class _RequestCardState extends State<RequestCard> {
             SizedBox(
               height: 20,
             ),
-            getTags()
+            getTags(),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
         decoration: BoxDecoration(

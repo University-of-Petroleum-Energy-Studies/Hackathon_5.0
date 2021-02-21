@@ -16,6 +16,7 @@ import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:location/location.dart' as flutterLoc;
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:url_launcher/url_launcher.dart';
 
 class OwnerNearByView extends StatefulWidget {
   static const routeName = 'OwnerNearByView';
@@ -24,7 +25,8 @@ class OwnerNearByView extends StatefulWidget {
   _OwnerNearByViewState createState() => _OwnerNearByViewState();
 }
 
-class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderStateMixin {
+class _OwnerNearByViewState extends State<OwnerNearByView>
+    with TickerProviderStateMixin {
   int selectedRadius = 0;
   String category;
   List<Widget> cardList = [Container()];
@@ -36,8 +38,10 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
   void initState() {
     selectedRadius = SessionController.getSelectedRadiusIndex();
     owner = SessionController.getOwnerInfoFromLocal();
-    ownerLocation =
-        flutterLoc.LocationData.fromMap({'latitude': owner.location.latitude, 'longitude': owner.location.longitude});
+    ownerLocation = flutterLoc.LocationData.fromMap({
+      'latitude': owner.location.latitude,
+      'longitude': owner.location.longitude
+    });
     super.initState();
   }
 
@@ -68,7 +72,8 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                     children: <Widget>[
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: MediaQuery.of(context).size.width * 2.5 / 16,
+                          horizontal:
+                              MediaQuery.of(context).size.width * 2.5 / 16,
                         ),
                         child: Divider(
                           color: Colors.black,
@@ -77,7 +82,9 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 1 / 16),
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 1 / 16),
                         height: 50,
                         padding: EdgeInsets.all(10),
                         child: Row(
@@ -93,7 +100,8 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                 onTap: () {
                                   setState(() {
                                     selectedRadius = 0;
-                                    SessionController.setSelectedRadiusIndex(selectedRadius);
+                                    SessionController.setSelectedRadiusIndex(
+                                        selectedRadius);
                                   });
                                 },
                               ),
@@ -104,11 +112,14 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                 focusColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
-                                child: selectedRadius > 0 ? selectedCircle : circle,
+                                child: selectedRadius > 0
+                                    ? selectedCircle
+                                    : circle,
                                 onTap: () {
                                   setState(() {
                                     selectedRadius = 1;
-                                    SessionController.setSelectedRadiusIndex(selectedRadius);
+                                    SessionController.setSelectedRadiusIndex(
+                                        selectedRadius);
                                   });
                                 },
                               ),
@@ -119,11 +130,14 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                 focusColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
-                                child: selectedRadius > 1 ? selectedCircle : circle,
+                                child: selectedRadius > 1
+                                    ? selectedCircle
+                                    : circle,
                                 onTap: () {
                                   setState(() {
                                     selectedRadius = 2;
-                                    SessionController.setSelectedRadiusIndex(selectedRadius);
+                                    SessionController.setSelectedRadiusIndex(
+                                        selectedRadius);
                                   });
                                 },
                               ),
@@ -134,11 +148,14 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                 focusColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
-                                child: selectedRadius > 2 ? selectedCircle : circle,
+                                child: selectedRadius > 2
+                                    ? selectedCircle
+                                    : circle,
                                 onTap: () {
                                   setState(() {
                                     selectedRadius = 3;
-                                    SessionController.setSelectedRadiusIndex(selectedRadius);
+                                    SessionController.setSelectedRadiusIndex(
+                                        selectedRadius);
                                   });
                                 },
                               ),
@@ -167,12 +184,15 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
               ],
             ),
             StreamBuilder<List<DocumentSnapshot>>(
-                stream: OwnerController.getAllActiveNearByRequestsForRadius(kRadiusList[selectedRadius], ownerLocation),
+                stream: OwnerController.getAllActiveNearByRequestsForRadius(
+                    kRadiusList[selectedRadius], ownerLocation),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     DateTime yesterdayTime = getYesterdayTime();
-                    List<Request> requests =
-                        snapshot.data.map((e) => Request.fromJson(e.data)).toList().where((element) {
+                    List<Request> requests = snapshot.data
+                        .map((e) => Request.fromJson(e.data))
+                        .toList()
+                        .where((element) {
                       return getRelevantRequest(element, yesterdayTime);
                     }).toList();
                     if (requests.length > 0) {
@@ -183,18 +203,23 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                             child: Container(
                               padding: const EdgeInsets.all(16.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text('Active requests near by',
                                       style: Theme.of(context)
                                           .textTheme
                                           .subtitle1
-                                          .copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                                          .copyWith(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold)),
                                   Text('${requests.length}',
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5
-                                          .copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                                          .copyWith(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold)),
                                 ],
                               ),
                               decoration: BoxDecoration(
@@ -204,14 +229,18 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                   color: Hexcolor('ff77bfff')),
                             ),
                           ),
-                          requests.length == 1 // if only one request then show one card else show the stack
+                          requests.length ==
+                                  1 // if only one request then show one card else show the stack
                               ? Container(
-                                  height: MediaQuery.of(context).size.height * 0.63,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.63,
                                   padding: EdgeInsets.only(top: 16),
-                                  child: StackView(requests[0], 0, ownerLocation),
+                                  child:
+                                      StackView(requests[0], 0, ownerLocation),
                                 )
                               : Container(
-                                  height: MediaQuery.of(context).size.height * 0.65,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.65,
                                   child: TinderSwapCard(
                                     animDuration: 200,
                                     orientation: AmassOrientation.BOTTOM,
@@ -219,14 +248,23 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                     stackNum: requests.length,
                                     swipeEdge: 4.0,
                                     maxWidth: MediaQuery.of(context).size.width,
-                                    maxHeight: MediaQuery.of(context).size.height * 0.60,
-                                    minWidth: MediaQuery.of(context).size.width * 0.95,
-                                    minHeight: MediaQuery.of(context).size.height * 0.59,
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.60,
+                                    minWidth:
+                                        MediaQuery.of(context).size.width *
+                                            0.95,
+                                    minHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.59,
                                     cardBuilder: (context, index) {
-                                      return StackView(requests[index], index, ownerLocation);
+                                      return StackView(requests[index], index,
+                                          ownerLocation);
                                     },
                                     cardController: CardController(),
-                                    swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
+                                    swipeUpdateCallback:
+                                        (DragUpdateDetails details,
+                                            Alignment align) {
                                       /// Get swiping card's alignment
                                       if (align.x < 0) {
                                         //Card is LEFT swiping
@@ -234,7 +272,9 @@ class _OwnerNearByViewState extends State<OwnerNearByView> with TickerProviderSt
                                         //Card is RIGHT swiping
                                       }
                                     },
-                                    swipeCompleteCallback: (CardSwipeOrientation orientation, int index) {
+                                    swipeCompleteCallback:
+                                        (CardSwipeOrientation orientation,
+                                            int index) {
                                       /// Get orientation & index of swiped card!
                                     },
                                   ),
@@ -276,14 +316,17 @@ Show how far the customers's requested location is
 
 getDistanceIndicator(Request request, flutterLoc.LocationData currentLocation) {
   double distance = GeoFirePoint.distanceBetween(
-          to: request.location.coords, from: Coordinates(currentLocation.latitude, currentLocation.longitude)) *
+          to: request.location.coords,
+          from: Coordinates(
+              currentLocation.latitude, currentLocation.longitude)) *
       1000;
   String distanceText;
   if (distance > 1000) {
     int newDistance = distance ~/ 1000;
     distanceText = '$newDistance ' + (newDistance > 1 ? 'kms away' : 'km away');
   } else {
-    distanceText = '${distance.toInt()} ' + (distance > 1 ? 'meters away' : 'meter away');
+    distanceText =
+        '${distance.toInt()} ' + (distance > 1 ? 'meters away' : 'meter away');
   }
   return Row(
     children: <Widget>[
@@ -351,7 +394,9 @@ class _StackViewState extends State<StackView> {
     DateTime now = DateTime.now().toUtc();
     creationDate = now.subtract(Duration(
         milliseconds: now
-            .difference(DateTime.fromMillisecondsSinceEpoch(widget.request.creationDateInEpoc ?? 0, isUtc: true))
+            .difference(DateTime.fromMillisecondsSinceEpoch(
+                widget.request.creationDateInEpoc ?? 0,
+                isUtc: true))
             .inMilliseconds));
     super.initState();
   }
@@ -369,14 +414,7 @@ class _StackViewState extends State<StackView> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Expanded(
-                  child: PriorityWidget(
-                    widget.request.priority,
-                    readOnly: true,
-                    request: widget.request,
-                  ),
-                ),
-                Expanded(child: CategoryLabel(widget.request.category)),
+                getDistanceIndicator(widget.request, widget.ownerLocation),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -400,7 +438,18 @@ class _StackViewState extends State<StackView> {
             SizedBox(
               height: 20,
             ),
-            getDistanceIndicator(widget.request, widget.ownerLocation),
+            Row(
+              children: [
+                Expanded(
+                  child: PriorityWidget(
+                    widget.request.priority,
+                    readOnly: true,
+                    request: widget.request,
+                  ),
+                ),
+                Expanded(child: CategoryLabel(widget.request.category)),
+              ],
+            ),
             SizedBox(
               height: 20,
             ),
@@ -415,6 +464,7 @@ class _StackViewState extends State<StackView> {
               height: 20,
             ),
             getItems(widget.request),
+            getCallButton(),
             Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -422,7 +472,8 @@ class _StackViewState extends State<StackView> {
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(right: 25, bottom: 20),
-                    padding: EdgeInsets.only(left: 10, right: 10, bottom: 3, top: 3),
+                    padding:
+                        EdgeInsets.only(left: 10, right: 10, bottom: 3, top: 3),
                     child: Text(
                       (widget.index + 1).toString(),
                     ),
@@ -441,5 +492,45 @@ class _StackViewState extends State<StackView> {
         ),
       ),
     );
+  }
+
+  getCallButton() {
+    return FutureBuilder(
+        future: OwnerController.getRequestOwnerID(widget.request.ownerId),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Container();
+          }
+          print("snapshot.data ${snapshot.data.documents[0]['phoneNumber']}");
+          return GestureDetector(
+            onTap: () {
+              String phone = snapshot.data.documents[0]['phoneNumber'];
+              launch("tel://$phone");
+            },
+            child: Container(
+              color: Color(0xff66FD96),
+              margin: EdgeInsets.only(left: 10),
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "CALL",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(width: 75),
+                  Container(
+                    height: 15,
+                    width: 15,
+                    child: Image.asset(
+                      'assets/icons/arrow_right.png',
+                      color: Colors.black,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
