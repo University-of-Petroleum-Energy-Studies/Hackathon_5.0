@@ -1,0 +1,29 @@
+<template name="mainLayout">
+
+    <!-- Wrapper-->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        {{> navigation }}
+
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg">
+
+            <!-- Page wrapper -->
+            {{> topNavbar }}
+
+            <!-- Main view  -->
+            {{>Template.dynamic template=content}}
+
+           
+
+        </div>
+        <!-- End page wrapper-->
+
+        <!-- Right Sidebar -->
+       
+
+    </div>
+    <!-- End wrapper-->
+
+</template>
