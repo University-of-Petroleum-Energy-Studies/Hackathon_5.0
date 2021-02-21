@@ -29,6 +29,10 @@ const Login = () => {
             .catch(err => alert(err.message))
     }
 
+    const redirect = () => {
+        history.push('/register')
+    }
+
     return (
         <div className='login'>
 
@@ -41,13 +45,15 @@ const Login = () => {
                     </div>
 
                     <form>
-                        <input type="text" id="Username" className="fadeIn second" name="login" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input type="email" id="Username" className="fadeIn second" name="login" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
 
-                        <input type="text" id="password" className="fadeIn third" name="login" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <input type="password" id="password" className="fadeIn third" name="login" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
 
                         <input onClick={signIn} type="submit" className="fadeIn fourth" value="Log In" />
 
                     </form>
+
+                    <input type="submit" value='Redirect to Sign Up' onClick={redirect} />
 
                 </div>
             </div>
