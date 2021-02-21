@@ -25,7 +25,11 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
   @override
   void initState()  {
     super.initState();
+    AlanVoice.addButton("9f1607846aab2f8355f03f7f9b5bd7282e956eca572e1d8b807a3e2338fdd0dc/stage");
+
   }
+
+
 
 
   @override
@@ -247,10 +251,10 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                       flex: 1,
                       child: HomeCardWidget(
                         backgroundColor: AppColors.primaryColor,
-                        title: Strings.notesTitle,
+                        title: Strings.faqTitle,
                         imagePath:
-                        '${Endpoints.baseUrlGraphics}/notes.png',
-                        route: Routes.notes,
+                        '${Endpoints.baseUrlGraphics}/faq-data.png',
+                        route: Routes.faq,
                       ),
                     ),
 
@@ -302,6 +306,43 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
 
                 SizedBoxHeightWidget(screenHeight / 125),
 
+                Row(
+                  children: const <Widget>[
+
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Travel Guidelines',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/travel.png',
+                        route: Routes.travel,
+                      ),
+                    ),
+
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Notes',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/notes.png',
+                        route: Routes.notes,
+                      ),
+                    ),
+
+                    Expanded(
+                      flex: 1,
+                      child: HomeCardWidget(
+                        backgroundColor: AppColors.primaryColor,
+                        title: 'Drink Water Reminder',
+                        imagePath:
+                        '${Endpoints.baseUrlGraphics}/water.png',
+                        route: Routes.water,
+                      ),
+                    )
+                  ],
+                ),
 
               ],
             ),
