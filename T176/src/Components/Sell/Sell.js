@@ -75,8 +75,12 @@ const Sell = () => {
             alert('Please enter the crop mentioned in the list of Available Crops')
         }
 
+        else if (contact.length !== 10) alert('Contact No. must be of 10 digits')
+
         else {
             alert("Your Price is above the MSP !! Good to Go 😀	")
+            document.querySelector('.sell__submit').disabled = false;
+
         }
     }
 
@@ -147,7 +151,11 @@ const Sell = () => {
                 </div>
 
                 <div className="sell__button">
-                    <input type='submit' value='Submit' />
+                    <input className='sell__submit' type='submit' value='Submit' disabled />
+                </div>
+
+                <div className="sell__redirect">
+                    <input type='submit' value='Redirect to Buy page' onClick={() => history.push('/buy')} />
                 </div>
             </form>
 
