@@ -1,30 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 
 import { auth, provider } from '../../firebase';
+import { useHistory } from 'react-router-dom';
+import { useStateValue } from '../../StateProvider';
+
 
 const Login = () => {
+    const [{ basket }, dispatch] = useStateValue();
 
-    const signIn = () => {
-        auth.signInWithPopup(provider)
-            .catch(err => alert(err.message));
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = e => {
+        e.preventDefault();
+
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                console.log(auth)
+                history.push('/buyorsell')
+                dispatch({
+                    type: 'SET_USER',
+                    user: auth.email
+                })
+            })
+            .catch(err => alert(err.message))
     }
+
     return (
         <div className='login'>
 
             <div className="wrapper fadeInDown">
                 <div id="formContent">
-                    <h2 class="active"> Sign In </h2>
+                    <h2 className="active"> Sign In </h2>
 
-                    <div class="fadeIn first">
+                    <div className="fadeIn first">
                         <img src="https://image.freepik.com/free-vector/modern-organic-farm-ranch-yard-isometric_1441-3221.jpg" id="icon" alt="User Icon" />
                     </div>
 
                     <form>
-                        <input type="text" id="Username" class="fadeIn second" name="login" placeholder="Username" />
-                        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" />
-                        <input type="submit" class="fadeIn fourth" value="Log In" />
-                        <input type="submit" class="fadeIn fourth" value="Log In with Google" onClick={signIn} />
+                        <input type="text" id="Username" className="fadeIn second" name="login" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+
+                        <input type="text" id="password" className="fadeIn third" name="login" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+
+                        <input onClick={signIn} type="submit" className="fadeIn fourth" value="Log In" />
+
                     </form>
 
                 </div>

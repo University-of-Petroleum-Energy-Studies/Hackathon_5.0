@@ -1,0 +1,90 @@
+.body {
+    overflow: hidden;
+}
+
+.sell {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sell__crop {
+    display: flex;
+}
+
+.sell__cropP {
+    padding: 20px;
+}
+
+.sell__cropMenu {
+    margin: 15px;
+}
+
+.sell__capacity {
+    display: flex;
+    padding: 20px;
+}
+
+.sell__capacityP {
+    padding: 20px;
+    font-size: 15px;
+}
+
+.sell__capacityTitle {
+    padding-right: 10px;
+}
+
+.sell__price {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sell__priceP {
+    padding-right: 10px;
+}
+
+.sell__form {
+    background-color: white;
+    width: 33vw;
+    margin: 20px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.sell__formImage {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.sell__button {
+    text-align: center;
+}
+
+.sell__selectCrop {
+    display: flex;
+    padding: 20px;
+}
+
+.sell__selectCropP {
+    padding-right: 10px;
+}
+
+body {
+    background-color: #adeecf;
+}
+
+.sell__priceFields {
+    display: flex;
+}
+
+.sell__validate {
+    text-align: center;
+}
+
+.sell__contact {
+    display: flex;
+    padding: 20px;
+}
