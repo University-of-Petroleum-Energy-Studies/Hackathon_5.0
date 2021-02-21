@@ -88,3 +88,7 @@ body {
     display: flex;
     padding: 20px;
 }
+
+.sell__redirect {
+    text-align: center;
+}
