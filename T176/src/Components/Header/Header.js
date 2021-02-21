@@ -27,6 +27,10 @@ const Header = () => {
                 <Link to='/buy'>
                     <h1 className='header__h1'>Buy</h1>
                 </Link>
+
+                <Link to='/buyorsell'>
+                    <h1 className='header__h1' style={{ padding: '30px' }}>Main Page</h1>
+                </Link>
             </div>
 
 
