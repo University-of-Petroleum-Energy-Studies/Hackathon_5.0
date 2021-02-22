@@ -85,7 +85,7 @@ Course.place(x=290, y=263)
 
 Label(root, text='Enter Percentage bracket', bg='#7FFF00', font=('arial', 12, 'normal')).place(x=57, y=320)
 
-Academic = ttk.Combobox(root, values=['Academic_40%~49%', 'Academic_50%~59%', 'Academic_60%~70%', 'Academic_<40%',
+Academic = ttk.Combobox(root, values=['Academic_40%~49%', 'Academic_50%~59%', 'Academic_<40%',
                                       'Academic_>70%'], font=('arial', 12, 'normal'), width=30)
 Academic.place(x=290, y=320)
 
