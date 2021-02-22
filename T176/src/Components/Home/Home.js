@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { db } from '../../firebase';
 import './css/Home.css'
 
 const Home = () => {
+
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
+
+	const addMessage = (e) => {
+		e.preventDefault();
+
+		db.settings({
+			timestampsInSnapshots: true
+		});
+		db.collection("Feedback").add({
+			name: name,
+			email: email,
+			message: message,
+		});
+
+		setName('');
+		setEmail('');
+		setMessage('');
+	}
 
 	return (
 		<div className='Home'>
@@ -26,7 +48,7 @@ const Home = () => {
 			<div id="main">
 
 				<header className="major container medium">
-					<h2>AgriVend is a webapp through which farmers can sell crops to and buy
+					<h2 style={{ color: 'black' }}>AgriVend is a webapp through which farmers can sell crops to and buy
 					equipment directly from other merchants without any third-party mediation. To avoid price inflation
 					and maintain regularised selling, the app validates any purchase through the use of MSP for pricing
 					and the buyer must adhere to it. The app also incorporate payment authentication which help both
@@ -80,16 +102,16 @@ const Home = () => {
 					<p>Tell us how we can improve more and provide you better services.
 					<br /> Constructive criticism and positive feedback are appreciated.</p>
 
-					<form method="post" action="#">
+					<form onSubmit={addMessage}>
 						<div className="row">
 							<div className="col-6 col-12-mobilep">
-								<input type="text" name="name" placeholder="Name" />
+								<input type="text" name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} value={name} />
 							</div>
 							<div className="col-6 col-12-mobilep">
-								<input type="email" name="email" placeholder="Email" />
+								<input type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
 							</div>
 							<div className="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
+								<textarea name="message" placeholder="Message" rows="6" onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
 							</div>
 							<div className="col-12">
 								<ul className="actions special">
